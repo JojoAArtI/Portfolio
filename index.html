@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joel Inian Francis - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="active" data-section="home">
+                        <a href="#">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li data-section="skills">
+                        <a href="#">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Skills</span>
+                        </a>
+                    </li>
+                    <li data-section="css-playground">
+                        <a href="#">
+                            <i class="fas fa-palette"></i>
+                            <span>CSS Playground</span>
+                        </a>
+                    </li>
+                    <li data-section="resume">
+                        <a href="#">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Resume</span>
+                        </a>
+                    </li>
+                    <li data-section="contact">
+                        <a href="#">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="profile">
+                <div class="avatar">
+                    <img src="https://images.pexels.com/photos/3394660/pexels-photo-3394660.jpeg" alt="Profile">
+                </div>
+                <div class="user-info">
+                    <h3>Joel Inian Francis</h3>
+                    <p>B.Tech CSE (AIML)</p>
+                </div>
+            </div>
+        </aside>
+        <main class="content">
+            <div id="home-content" class="content-section active">
+                <header>
+                    <h1>Welcome! ✨
+</h1>
+                    <p>Glad to have you here. Explore my work and journey.</p>
+                </header>
+                <div class="glass-panel-wrapper">
+                    <div class="glass-panel">
+                        <h2>About Me</h2>
+                        <p>A dedicated and forward-thinking B.Tech Computer Science and Engineering student specializing in Artificial Intelligence & Machine Learning at Christ University, Bengaluru. My academic journey is driven by a profound curiosity for intelligent systems and a commitment to leveraging cutting-edge technology for practical impact.
+
+I possess a robust technical foundation, proficient in Python and equipped with a strong understanding of core Machine Learning concepts. My skills extend to front-end development (HTML, CSS, JavaScript), enabling me to not only build the logic but also craft intuitive and engaging user experiences.
+
+My real-world experience includes a impactful Data Analytics internship at Vdart, where I gained invaluable hands-on expertise in extracting insights from complex datasets and translating them into actionable strategies. This experience solidified my passion for data-driven problem-solving and sharpened my analytical acumen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="skills-content" class="content-section">
+                <header>
+                    <h1>My Skills</h1>
+                    <p>The tools and technologies I'm proficient in.</p>
+                </header>
+                <div class="glass-panel-wrapper skill-grid">
+                    <div class="glass-panel skill-card">
+                        <i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="glass-panel skill-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Data Analytics</h3>
+                    </div>
+                    <div class="glass-panel skill-card">
+                        <i class="fab fa-java"></i>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="glass-panel skill-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Machine Learning</h3>
+                    </div>
+                    <div class="glass-panel skill-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Front-End Development</h3>
+                        <p>(HTML, CSS, JavaScript)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="css-playground-content" class="content-section">
+                <header>
+                    <h1>CSS Playground</h1>
+                    <p>Experiment with common CSS properties and generate code snippets instantly. 🎨</p>
+                </header>
+
+                <div class="glass-panel css-generator-panel">
+                    <h2>Box Shadow Generator</h2>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label for="shadowOffsetX">Horizontal Offset:</label>
+                            <input type="range" id="shadowOffsetX" min="-50" max="50" value="5" />
+                            <span id="shadowOffsetX-value">5px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="shadowOffsetY">Vertical Offset:</label>
+                            <input type="range" id="shadowOffsetY" min="-50" max="50" value="5" />
+                            <span id="shadowOffsetY-value">5px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="shadowBlurRadius">Blur Radius:</label>
+                            <input type="range" id="shadowBlurRadius" min="0" max="100" value="10" />
+                            <span id="shadowBlurRadius-value">10px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="shadowSpreadRadius">Spread Radius:</label>
+                            <input type="range" id="shadowSpreadRadius" min="-20" max="50" value="0" />
+                            <span id="shadowSpreadRadius-value">0px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="shadowColor">Color:</label>
+                            <input type="color" id="shadowColor" value="#000000" />
+                        </div>
+                        <div class="control-group checkbox-group">
+                            <input type="checkbox" id="insetShadow">
+                            <label for="insetShadow">Inset Shadow</label>
+                        </div>
+                    </div>
+                    <div class="preview-output-area">
+                        <div id="box-shadow-preview-box" class="preview-box"></div>
+                        <div class="code-output">
+                            <textarea id="box-shadow-css-code" readonly rows="3"></textarea>
+                            <button class="copy-button" data-target="box-shadow-css-code">Copy CSS</button>
+                            <span class="copy-message" id="box-shadow-copy-message"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel css-generator-panel">
+                    <h2>Border Radius Generator</h2>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label for="borderRadiusTopLeft">Top-Left:</label>
+                            <input type="range" id="borderRadiusTopLeft" min="0" max="100" value="10" />
+                            <span id="borderRadiusTopLeft-value">10px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="borderRadiusTopRight">Top-Right:</label>
+                            <input type="range" id="borderRadiusTopRight" min="0" max="100" value="10" />
+                            <span id="borderRadiusTopRight-value">10px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="borderRadiusBottomRight">Bottom-Right:</label>
+                            <input type="range" id="borderRadiusBottomRight" min="0" max="100" value="10" />
+                            <span id="borderRadiusBottomRight-value">10px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="borderRadiusBottomLeft">Bottom-Left:</label>
+                            <input type="range" id="borderRadiusBottomLeft" min="0" max="100" value="10" />
+                            <span id="borderRadiusBottomLeft-value">10px</span>
+                        </div>
+                    </div>
+                    <div class="preview-output-area">
+                        <div id="border-radius-preview-box" class="preview-box"></div>
+                        <div class="code-output">
+                            <textarea id="border-radius-css-code" readonly rows="2"></textarea>
+                            <button class="copy-button" data-target="border-radius-css-code">Copy CSS</button>
+                            <span class="copy-message" id="border-radius-copy-message"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel css-generator-panel">
+                    <h2>Linear Gradient Generator</h2>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label for="gradientAngle">Angle:</label>
+                            <input type="range" id="gradientAngle" min="0" max="360" value="90" />
+                            <span id="gradientAngle-value">90deg</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="gradientColor1">Color 1:</label>
+                            <input type="color" id="gradientColor1" value="#0056e6" />
+                        </div>
+                        <div class="control-group">
+                            <label for="gradientColor2">Color 2:</label>
+                            <input type="color" id="gradientColor2" value="#00d4ff" />
+                        </div>
+                    </div>
+                    <div class="preview-output-area">
+                        <div id="linear-gradient-preview-box" class="preview-box wide-preview"></div>
+                        <div class="code-output">
+                            <textarea id="linear-gradient-css-code" readonly rows="2"></textarea>
+                            <button class="copy-button" data-target="linear-gradient-css-code">Copy CSS</button>
+                            <span class="copy-message" id="linear-gradient-copy-message"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel css-generator-panel">
+                    <h2>Text Shadow Generator</h2>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label for="textShadowOffsetX">Horizontal Offset:</label>
+                            <input type="range" id="textShadowOffsetX" min="-20" max="20" value="2" />
+                            <span id="textShadowOffsetX-value">2px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="textShadowOffsetY">Vertical Offset:</label>
+                            <input type="range" id="textShadowOffsetY" min="-20" max="20" value="2" />
+                            <span id="textShadowOffsetY-value">2px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="textShadowBlurRadius">Blur Radius:</label>
+                            <input type="range" id="textShadowBlurRadius" min="0" max="20" value="4" />
+                            <span id="textShadowBlurRadius-value">4px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="textShadowColor">Color:</label>
+                            <input type="color" id="textShadowColor" value="#000000" />
+                        </div>
+                        <div class="control-group">
+                            <label for="textColor">Text Color:</label>
+                            <input type="color" id="textColor" value="#ffffff" />
+                        </div>
+                    </div>
+                    <div class="preview-output-area">
+                        <div id="text-shadow-preview-box" class="preview-box text-preview">
+                            <span>Text Shadow</span>
+                        </div>
+                        <div class="code-output">
+                            <textarea id="text-shadow-css-code" readonly rows="2"></textarea>
+                            <button class="copy-button" data-target="text-shadow-css-code">Copy CSS</button>
+                            <span class="copy-message" id="text-shadow-copy-message"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+<div id="resume-content" class="content-section">
+    <header>
+        <h1>My Resume</h1>
+        <p>A detailed overview of my skills and experience.</p>
+    </header>
+    <div class="glass-panel resume-display">
+        <img
+            src="https://i.postimg.cc/zDChL2KR/portfolioresume-1.png" alt="My Professional Resume"
+            loading="lazy"
+        />
+        <p class="zoom-instruction">
+            (You can zoom in/out using your browser's native zoom or pinch-to-zoom on touch devices)
+        </p>
+    </div>
+
+</div>
+            
+            <div id="contact-content" class="content-section">
+                <header>
+                    <h1>Get in Touch</h1>
+                    <p>Feel free to connect with me! </p>
+                </header>
+                <div class="glass-panel-wrapper contact-grid">
+                  <a href="https://www.linkedin.com/in/joelinianfrancis/" target="_blank" rel="noopener noreferrer"class="glass-panel contact-card">
+                        <i class="fab fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                        <p>Connect with me on LinkedIn</p>
+                    </a>
+                    <a href="tel:+919940802121" class="glass-panel contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Contact No.</h3>
+                        <p>+91 99408 02444</p>
+                    </a>
+                    <a href="https://github.com/JojoAArtI" target="_blank" class="glass-panel contact-card">
+                        <i class="fab fa-github"></i>
+                        <h3>GitHub</h3>
+                        <p>Explore my code on GitHub</p>
+                    </a>
+                    <a href="mailto:francisjoelinian@gmail.com" class="glass-panel contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>francisjoelinian@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
