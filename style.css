@@ -1,711 +1,310 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-:root {
-    --primary-color: #0066ff;
-    --sidebar-width: 280px;
-    --sidebar-collapsed-width: 80px;
-    --transition-speed: 0.3s;
-    --glass-background: rgba(255, 255, 255, 0.08);
-    --glass-border: rgba(255, 255, 255, 0.18);
-    --glass-shadow: rgba(0, 0, 0, 0.1);
-    --blur-strength: 30px;
-
-    /* Custom Scrollbar Colors */
-    --scrollbar-thumb: rgba(255, 255, 255, 0.3);
-    --scrollbar-track: rgba(0, 0, 0, 0.1);
-    --scrollbar-thumb-hover: var(--primary-color);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #2a2a72 0%, #009ffd 74%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    overflow: hidden;
-}
-
-.container {
-    display: flex;
-    width: 90%;
-    height: 85vh;
-    background: var(--glass-background);
-    backdrop-filter: blur(var(--blur-strength));
-    -webkit-backdrop-filter: blur(var(--blur-strength));
-    border-radius: 24px;
-    box-shadow: 0 8px 32px var(--glass-shadow);
-    border: 1px solid var(--glass-border);
-    overflow: hidden;
-}
-
-.sidebar {
-    width: var(--sidebar-width);
-    height: 100%;
-    padding: 30px 15px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    flex-direction: column;
-    transition: width var(--transition-speed) ease;
-    position: relative;
-}
-
-.logo {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.logo i {
-    font-size: 36px;
-    color: #fff;
-    opacity: 0.9;
-}
-
-.menu {
-    flex-grow: 1; /* Allow menu to grow and push profile to bottom */
-}
-
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu li {
-    margin-bottom: 8px;
-    border-radius: 16px;
-    transition: all 0.2s ease;
-    position: relative;
-    cursor: pointer; /* Indicate clickable */
-}
-
-.menu li:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.menu li.active {
-    background: rgba(255, 255, 255, 0.25);
-}
-
-.menu li.active::before {
-    content: '';
-    position: absolute;
-    left: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 20px;
-    background: var(--primary-color);
-    border-radius: 0 4px 4px 0;
-}
-
-.menu a {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    padding: 12px 16px;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-}
-
-.menu a i {
-    font-size: 20px;
-    margin-right: 14px;
-    min-width: 22px;
-    text-align: center;
-}
-
-.profile {
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    padding: 16px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 12px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.user-info h3 {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 2px;
-}
-
-.user-info p {
-    font-size: 12px;
-    opacity: 0.8;
-}
-
-.content {
-    flex: 1;
-    padding: 40px; /* Base padding for content */
-    overflow-y: auto; /* Enable scrolling */
-    position: relative;
-
-    /* Custom Scrollbar Styles */
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track); /* Firefox */
-}
-
-/* For Webkit browsers (Chrome, Safari) */
-.content::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-}
-
-.content::-webkit-scrollbar-track {
-    background: var(--scrollbar-track); /* Color of the scrollbar track */
-    border-radius: 10px;
-}
-
-.content::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb); /* Color of the scrollbar thumb */
-    border-radius: 10px;
-    border: 2px solid transparent; /* Border around the thumb */
-    background-clip: padding-box; /* Ensures border doesn't fill thumb */
-}
-
-.content::-webkit-scrollbar-thumb:hover {
-    background-color: var(--scrollbar-thumb-hover); /* Color of the scrollbar thumb on hover */
-}
-
-
-.content-section {
-    display: none;
-    animation: fadeIn 0.5s ease-out forwards;
-}
-
-.content-section.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-header {
-    margin-bottom: 30px;
-}
-
-header h1 {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-header p {
-    font-size: 16px;
-    opacity: 0.8;
-}
-
-/* General Glass Panel Styles */
-.glass-panel-wrapper {
-    display: grid; /* Default to grid for general layouts */
-    gap: 24px; /* Default gap between grid items */
-    margin-top: 30px;
-}
-
-.glass-panel {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.glass-panel:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Specific Home Section Styling */
-#home-content .glass-panel {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-#home-content .glass-panel h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-#home-content .glass-panel p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-
-/* Skills Section */
-.skill-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    text-align: center;
-}
-
-.skill-card i {
-    font-size: 48px;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    display: block;
-}
-
-.skill-card h3 {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-/* --- CSS Playground Section Alignment (Final Version) --- */
-#css-playground-content .glass-panel-wrapper {
-    /* Set a max-width for the entire grid of generators to prevent stretching too wide */
-    max-width: 1000px; /* Adjust this value as needed for ideal multi-column width */
-    margin-left: auto;
-    margin-right: auto; /* Center the entire wrapper horizontally */
-    
-    /* Responsive Grid for panels */
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Panels minimum 380px wide */
-    gap: 30px; /* Increased gap between panels for better visual separation */
-    
-    /* Ensure content inside panels is centered if they don't fill their grid cell */
-    justify-items: center; /* Centers grid items horizontally within their cell */
-    align-items: start; /* Aligns grid items to the start of their cell vertically */
-}
-
-.css-generator-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: 100%; /* Make panels fill their grid column */
-    /* Removed max-width here; now controlled by wrapper's grid-template-columns */
-}
-
-.css-generator-panel h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.controls {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 15px;
-    width: 100%;
-}
-
-.control-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.control-group label {
-    font-size: 0.95em;
-    opacity: 0.9;
-}
-
-.control-group input[type="range"] {
-    width: 100%;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    outline: none;
-    margin-top: 5px;
-}
-
-.control-group input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    cursor: grab;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.control-group input[type="color"] {
-    width: 100%;
-    height: 40px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    border-radius: 8px;
-    overflow: hidden; /* Hide default color picker border */
-}
-
-.control-group input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 0;
-}
-
-.control-group input[type="color"]::-webkit-color-swatch {
-    border: none;
-    border-radius: 8px;
-}
-
-.control-group span {
-    font-size: 0.85em;
-    opacity: 0.7;
-    text-align: right;
-    margin-top: -5px; /* Adjust spacing */
-}
-
-.checkbox-group {
-    flex-direction: row; /* For inline checkbox */
-    align-items: center;
-    gap: 10px;
-    justify-content: flex-start;
-}
-
-.checkbox-group input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    /* Custom checkbox styling if desired */
-}
-
-
-.preview-output-area {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.preview-box {
-    width: 150px;
-    height: 150px;
-    background: #ffffff; /* Default background for box-shadow & border-radius */
-    border-radius: 15px; /* Default border radius for preview box */
-    transition: box-shadow 0.1s ease-out, border-radius 0.1s ease-out, background 0.1s ease-out, text-shadow 0.1s ease-out, color 0.1s ease-out; /* Smooth transition for all changes */
-    display: flex; /* For text preview */
-    align-items: center; /* For text preview */
-    justify-content: center; /* For text preview */
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* Add a subtle default shadow for better visibility */
-}
-
-/* Specific styles for Linear Gradient preview */
-.preview-box.wide-preview {
-    width: 100%; /* Make gradient preview wider */
-    height: 100px; /* Adjust height for gradient */
-    background: linear-gradient(90deg, #0056e6, #00d4ff); /* Default gradient */
-}
-
-/* Specific styles for Text Shadow preview */
-.preview-box.text-preview {
-    background: #444; /* Darker background for text contrast */
-    color: #ffffff; /* Default text color */
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    overflow: hidden; /* Prevent text overflow */
-    border-radius: 8px; /* Slightly less rounded for text preview */
-}
-
-
-.code-output {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-.code-output textarea {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 15px;
-    color: #fff;
-    font-family: 'Fira Code', 'Cascadia Code', monospace; /* Add more monospace options */
-    font-size: 0.9em;
-    resize: vertical;
-    min-height: 80px;
-    white-space: pre-wrap; /* Preserve formatting */
-    word-wrap: break-word; /* Break long words */
-}
-
-.copy-button {
-    background: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 0.9em;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.copy-button:hover {
-    background: #0056e6;
-}
-
-.copy-message {
-    font-size: 0.8em;
-    opacity: 0;
-    color: #28a745; /* Green for success */
-    transition: opacity 0.3s ease;
-}
-
-.copy-message.show {
-    opacity: 1;
-}
-
-/* In your style.css */
-
-/* Resume Section */
-.resume-display {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px;
-    /* max-width: 800px;  Optional: constrain width of the resume display area */
-    /* margin: 0 auto;    Optional: center the resume display area */
-}
-
-/* In your style.css */
-
-/* Resume Section */
-.resume-display {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 30px;
-    /* --- NEW/ADJUSTED STYLES BELOW --- */
-    max-width: 750px; /* ⭐ CONTROL THE MAX WIDTH OF THE ENTIRE RESUME PANEL */
-    margin: 0 auto;  /* ⭐ CENTER THE RESUME PANEL WITHIN THE CONTENT AREA */
-    /* --- END NEW/ADJUSTED STYLES --- */
-}
-
-.resume-display img {
-    max-width: 100%; /* Ensures the image fits within its parent (.resume-display) */
-    height: auto; /* Maintains aspect ratio */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    cursor: zoom-in;
-}
-
-/* Optional: Add a simple hover effect to suggest it's interactive */
-.resume-display img:hover {
-    transform: scale(1.01);
-}
-
-.zoom-instruction {
-    margin-top: 15px;
-    font-size: 0.9em;
-    opacity: 0.7;
-    text-align: center;
-}
-
-
-/* Contact Section */
-.contact-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    text-align: center;
-}
-
-.contact-card {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 150px;
-}
-
-.contact-card i {
-    font-size: 40px;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.contact-card h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.contact-card p {
-    font-size: 0.9em;
-    opacity: 0.8;
-}
-
-
-/* Apple-style liquid effects (from your original CSS) */
-.menu li::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 16px;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0);
-    transition: box-shadow 0.3s ease;
-}
-
-.menu li:hover::after {
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
-}
-
-@media (max-width: 1024px) {
-    .sidebar {
-        width: var(--sidebar-collapsed-width);
-    }
-
-    .menu a span,
-    .user-info {
-        display: none;
-    }
-
-    .profile {
-        justify-content: center;
-    }
-
-    .avatar {
-        margin-right: 0;
-    }
-
-    .content {
-        padding: 30px;
-    }
-
-    /* CSS playground alignment for tablets/smaller desktops */
-    #css-playground-content .glass-panel-wrapper {
-        grid-template-columns: 1fr; /* Force single column on tablets */
-        max-width: 600px; /* Center the single column better */
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .skill-grid, .contact-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-    
-    .css-generator-panel {
-        max-width: unset; /* Allow full width of the grid cell */
-    }
-    .controls {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-        height: 90vh;
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        padding: 20px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo {
-        margin-bottom: 0;
-    }
-
-    .menu ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 0 10px;
-    }
-
-    .menu li {
-        margin: 5px;
-    }
-
-    .menu li.active::before {
-        left: 50%;
-        top: unset;
-        bottom: -5px;
-        transform: translateX(-50%);
-        width: 20px;
-        height: 4px;
-        border-radius: 4px 4px 0 0;
-    }
-
-    .menu a span {
-        display: none;
-    }
-
-    .profile {
-        display: none;
-    }
-
-    .content {
-        flex: 1;
-        padding: 20px;
-        overflow-y: auto;
-    }
-
-    #css-playground-content .glass-panel-wrapper {
-        grid-template-columns: 1fr; /* Force single column on very small screens */
-        max-width: unset; /* Let it expand to parent width */
-        margin-left: 0; /* Remove auto margins to avoid pushing into padding */
-        margin-right: 0;
-    }
-
-    .skill-grid, .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .controls {
-        grid-template-columns: 1fr; /* Stack controls on very small screens */
-    }
-    .preview-output-area {
-        flex-direction: column;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joel Inian Francis - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="active" data-section="home">
+                        <a href="#">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li data-section="skills">
+                        <a href="#">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Skills</span>
+                        </a>
+                    </li>
+                    <li data-section="css-playground">
+                        <a href="#">
+                            <i class="fas fa-palette"></i>
+                            <span>CSS Playground</span>
+                        </a>
+                    </li>
+                    <li data-section="resume">
+                        <a href="#">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Resume</span>
+                        </a>
+                    </li>
+                    <li data-section="contact">
+                        <a href="#">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="profile">
+                <div class="avatar">
+                    <img src="https://images.pexels.com/photos/3394660/pexels-photo-3394660.jpeg" alt="Profile">
+                </div>
+                <div class="user-info">
+                    <h3>Joel Inian Francis</h3>
+                    <p>B.Tech CSE (AIML)</p>
+                </div>
+            </div>
+        </aside>
+        <main class="content">
+            <div id="home-content" class="content-section active">
+                <header>
+                    <h1>Welcome! ✨
+</h1>
+                    <p>Glad to have you here. Explore my work and journey.</p>
+                </header>
+                <div class="glass-panel-wrapper">
+                    <div class="glass-panel">
+                        <h2>About Me</h2>
+                        <p>A dedicated and forward-thinking B.Tech Computer Science and Engineering student specializing in Artificial Intelligence & Machine Learning at Christ University, Bengaluru. My academic journey is driven by a profound curiosity for intelligent systems and a commitment to leveraging cutting-edge technology for practical impact.
+
+I possess a robust technical foundation, proficient in Python and equipped with a strong understanding of core Machine Learning concepts. My skills extend to front-end development (HTML, CSS, JavaScript), enabling me to not only build the logic but also craft intuitive and engaging user experiences.
+
+My real-world experience includes a impactful Data Analytics internship at Vdart, where I gained invaluable hands-on expertise in extracting insights from complex datasets and translating them into actionable strategies. This experience solidified my passion for data-driven problem-solving and sharpened my analytical acumen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="skills-content" class="content-section">
+                <header>
+                    <h1>My Skills</h1>
+                    <p>The tools and technologies I'm proficient in.</p>
+                </header>
+                <div class="glass-panel-wrapper skill-grid">
+                    <div class="glass-panel skill-card">
+                        <i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="glass-panel skill-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Data Analytics</h3>
+                    </div>
+                    <div class="glass-panel skill-card">
+                        <i class="fab fa-java"></i>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="glass-panel skill-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Machine Learning</h3>
+                    </div>
+                    <div class="glass-panel skill-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Front-End Development</h3>
+                        <p>(HTML, CSS, JavaScript)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="css-playground-content" class="content-section">
+                <header>
+                    <h1>CSS Playground</h1>
+                    <p>Experiment with common CSS properties and generate code snippets instantly. 🎨</p>
+                </header>
+
+                <div class="glass-panel css-generator-panel">
+                    <h2>Box Shadow Generator</h2>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label for="shadowOffsetX">Horizontal Offset:</label>
+                            <input type="range" id="shadowOffsetX" min="-50" max="50" value="5" />
+                            <span id="shadowOffsetX-value">5px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="shadowOffsetY">Vertical Offset:</label>
+                            <input type="range" id="shadowOffsetY" min="-50" max="50" value="5" />
+                            <span id="shadowOffsetY-value">5px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="shadowBlurRadius">Blur Radius:</label>
+                            <input type="range" id="shadowBlurRadius" min="0" max="100" value="10" />
+                            <span id="shadowBlurRadius-value">10px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="shadowSpreadRadius">Spread Radius:</label>
+                            <input type="range" id="shadowSpreadRadius" min="-20" max="50" value="0" />
+                            <span id="shadowSpreadRadius-value">0px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="shadowColor">Color:</label>
+                            <input type="color" id="shadowColor" value="#000000" />
+                        </div>
+                        <div class="control-group checkbox-group">
+                            <input type="checkbox" id="insetShadow">
+                            <label for="insetShadow">Inset Shadow</label>
+                        </div>
+                    </div>
+                    <div class="preview-output-area">
+                        <div id="box-shadow-preview-box" class="preview-box"></div>
+                        <div class="code-output">
+                            <textarea id="box-shadow-css-code" readonly rows="3"></textarea>
+                            <button class="copy-button" data-target="box-shadow-css-code">Copy CSS</button>
+                            <span class="copy-message" id="box-shadow-copy-message"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel css-generator-panel">
+                    <h2>Border Radius Generator</h2>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label for="borderRadiusTopLeft">Top-Left:</label>
+                            <input type="range" id="borderRadiusTopLeft" min="0" max="100" value="10" />
+                            <span id="borderRadiusTopLeft-value">10px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="borderRadiusTopRight">Top-Right:</label>
+                            <input type="range" id="borderRadiusTopRight" min="0" max="100" value="10" />
+                            <span id="borderRadiusTopRight-value">10px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="borderRadiusBottomRight">Bottom-Right:</label>
+                            <input type="range" id="borderRadiusBottomRight" min="0" max="100" value="10" />
+                            <span id="borderRadiusBottomRight-value">10px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="borderRadiusBottomLeft">Bottom-Left:</label>
+                            <input type="range" id="borderRadiusBottomLeft" min="0" max="100" value="10" />
+                            <span id="borderRadiusBottomLeft-value">10px</span>
+                        </div>
+                    </div>
+                    <div class="preview-output-area">
+                        <div id="border-radius-preview-box" class="preview-box"></div>
+                        <div class="code-output">
+                            <textarea id="border-radius-css-code" readonly rows="2"></textarea>
+                            <button class="copy-button" data-target="border-radius-css-code">Copy CSS</button>
+                            <span class="copy-message" id="border-radius-copy-message"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel css-generator-panel">
+                    <h2>Linear Gradient Generator</h2>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label for="gradientAngle">Angle:</label>
+                            <input type="range" id="gradientAngle" min="0" max="360" value="90" />
+                            <span id="gradientAngle-value">90deg</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="gradientColor1">Color 1:</label>
+                            <input type="color" id="gradientColor1" value="#0056e6" />
+                        </div>
+                        <div class="control-group">
+                            <label for="gradientColor2">Color 2:</label>
+                            <input type="color" id="gradientColor2" value="#00d4ff" />
+                        </div>
+                    </div>
+                    <div class="preview-output-area">
+                        <div id="linear-gradient-preview-box" class="preview-box wide-preview"></div>
+                        <div class="code-output">
+                            <textarea id="linear-gradient-css-code" readonly rows="2"></textarea>
+                            <button class="copy-button" data-target="linear-gradient-css-code">Copy CSS</button>
+                            <span class="copy-message" id="linear-gradient-copy-message"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel css-generator-panel">
+                    <h2>Text Shadow Generator</h2>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label for="textShadowOffsetX">Horizontal Offset:</label>
+                            <input type="range" id="textShadowOffsetX" min="-20" max="20" value="2" />
+                            <span id="textShadowOffsetX-value">2px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="textShadowOffsetY">Vertical Offset:</label>
+                            <input type="range" id="textShadowOffsetY" min="-20" max="20" value="2" />
+                            <span id="textShadowOffsetY-value">2px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="textShadowBlurRadius">Blur Radius:</label>
+                            <input type="range" id="textShadowBlurRadius" min="0" max="20" value="4" />
+                            <span id="textShadowBlurRadius-value">4px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="textShadowColor">Color:</label>
+                            <input type="color" id="textShadowColor" value="#000000" />
+                        </div>
+                        <div class="control-group">
+                            <label for="textColor">Text Color:</label>
+                            <input type="color" id="textColor" value="#ffffff" />
+                        </div>
+                    </div>
+                    <div class="preview-output-area">
+                        <div id="text-shadow-preview-box" class="preview-box text-preview">
+                            <span>Text Shadow</span>
+                        </div>
+                        <div class="code-output">
+                            <textarea id="text-shadow-css-code" readonly rows="2"></textarea>
+                            <button class="copy-button" data-target="text-shadow-css-code">Copy CSS</button>
+                            <span class="copy-message" id="text-shadow-copy-message"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+<div id="resume-content" class="content-section">
+    <header>
+        <h1>My Resume</h1>
+        <p>A detailed overview of my skills and experience.</p>
+    </header>
+    <div class="glass-panel resume-display">
+        <img
+            src="https://i.postimg.cc/zDChL2KR/portfolioresume-1.png" alt="My Professional Resume"
+            loading="lazy"
+        />
+        <p class="zoom-instruction">
+            (You can zoom in/out using your browser's native zoom or pinch-to-zoom on touch devices)
+        </p>
+    </div>
+
+</div>
+            
+            <div id="contact-content" class="content-section">
+                <header>
+                    <h1>Get in Touch</h1>
+                    <p>Feel free to connect with me! </p>
+                </header>
+                <div class="glass-panel-wrapper contact-grid">
+                  <a href="https://www.linkedin.com/in/joelinianfrancis/" target="_blank" rel="noopener noreferrer"class="glass-panel contact-card">
+                        <i class="fab fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                        <p>Connect with me on LinkedIn</p>
+                    </a>
+                    <a href="tel:+919940802121" class="glass-panel contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Contact No.</h3>
+                        <p>+91 99408 02444</p>
+                    </a>
+                    <a href="https://github.com/JojoAArtI" target="_blank" class="glass-panel contact-card">
+                        <i class="fab fa-github"></i>
+                        <h3>GitHub</h3>
+                        <p>Explore my code on GitHub</p>
+                    </a>
+                    <a href="mailto:francisjoelinian@gmail.com" class="glass-panel contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>francisjoelinian@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
