@@ -10,7 +10,7 @@
     --glass-shadow: rgba(0, 0, 0, 0.1);
     --blur-strength: 30px;
 
-    /* Custom Scrollbar Colors */
+  
     --scrollbar-thumb: rgba(255, 255, 255, 0.3);
     --scrollbar-track: rgba(0, 0, 0, 0.1);
     --scrollbar-thumb-hover: var(--primary-color);
@@ -72,7 +72,7 @@ body {
 }
 
 .menu {
-    flex-grow: 1; /* Allow menu to grow and push profile to bottom */
+    flex-grow: 1; 
 }
 
 .menu ul {
@@ -86,7 +86,7 @@ body {
     border-radius: 16px;
     transition: all 0.2s ease;
     position: relative;
-    cursor: pointer; /* Indicate clickable */
+    cursor: pointer;
 }
 
 .menu li:hover {
@@ -164,34 +164,34 @@ body {
 
 .content {
     flex: 1;
-    padding: 40px; /* Base padding for content */
-    overflow-y: auto; /* Enable scrolling */
+    padding: 40px;
+    overflow-y: auto;
     position: relative;
 
-    /* Custom Scrollbar Styles */
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track); /* Firefox */
+
+    scrollbar-width: thin; 
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);  
 }
 
-/* For Webkit browsers (Chrome, Safari) */
+
 .content::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
+    width: 8px;  
 }
 
 .content::-webkit-scrollbar-track {
-    background: var(--scrollbar-track); /* Color of the scrollbar track */
+    background: var(--scrollbar-track);  
     border-radius: 10px;
 }
 
 .content::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb); /* Color of the scrollbar thumb */
+    background-color: var(--scrollbar-thumb); 
     border-radius: 10px;
-    border: 2px solid transparent; /* Border around the thumb */
-    background-clip: padding-box; /* Ensures border doesn't fill thumb */
+    border: 2px solid transparent;  
+    background-clip: padding-box;  
 }
 
 .content::-webkit-scrollbar-thumb:hover {
-    background-color: var(--scrollbar-thumb-hover); /* Color of the scrollbar thumb on hover */
+    background-color: var(--scrollbar-thumb-hover);  
 }
 
 
@@ -224,10 +224,10 @@ header p {
     opacity: 0.8;
 }
 
-/* General Glass Panel Styles */
+ 
 .glass-panel-wrapper {
-    display: grid; /* Default to grid for general layouts */
-    gap: 24px; /* Default gap between grid items */
+    display: grid; 
+    gap: 24px;  
     margin-top: 30px;
 }
 
@@ -246,7 +246,7 @@ header p {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Specific Home Section Styling */
+ 
 #home-content .glass-panel {
     max-width: 700px;
     margin: 0 auto;
@@ -267,7 +267,7 @@ header p {
 }
 
 
-/* Skills Section */
+ 
 .skill-grid {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     text-align: center;
@@ -285,29 +285,25 @@ header p {
     font-weight: 500;
 }
 
-/* --- CSS Playground Section Alignment (Final Version) --- */
+ 
 #css-playground-content .glass-panel-wrapper {
-    /* Set a max-width for the entire grid of generators to prevent stretching too wide */
-    max-width: 1000px; /* Adjust this value as needed for ideal multi-column width */
+     max-width: 1000px; 
     margin-left: auto;
-    margin-right: auto; /* Center the entire wrapper horizontally */
+    margin-right: auto;   
     
-    /* Responsive Grid for panels */
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Panels minimum 380px wide */
-    gap: 30px; /* Increased gap between panels for better visual separation */
+     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+    gap: 30px;  
     
-    /* Ensure content inside panels is centered if they don't fill their grid cell */
-    justify-items: center; /* Centers grid items horizontally within their cell */
-    align-items: start; /* Aligns grid items to the start of their cell vertically */
+     justify-items: center; 
+    align-items: start;  
 }
 
 .css-generator-panel {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    width: 100%; /* Make panels fill their grid column */
-    /* Removed max-width here; now controlled by wrapper's grid-template-columns */
-}
+    width: 100%;  
+ }
 
 .css-generator-panel h2 {
     font-size: 24px;
@@ -364,7 +360,7 @@ header p {
     background: none;
     cursor: pointer;
     border-radius: 8px;
-    overflow: hidden; /* Hide default color picker border */
+    overflow: hidden; 
 }
 
 .control-group input[type="color"]::-webkit-color-swatch-wrapper {
@@ -380,11 +376,11 @@ header p {
     font-size: 0.85em;
     opacity: 0.7;
     text-align: right;
-    margin-top: -5px; /* Adjust spacing */
+    margin-top: -5px;  
 }
 
 .checkbox-group {
-    flex-direction: row; /* For inline checkbox */
+    flex-direction: row;  
     align-items: center;
     gap: 10px;
     justify-content: flex-start;
@@ -394,8 +390,7 @@ header p {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    /* Custom checkbox styling if desired */
-}
+ }
 
 
 .preview-output-area {
@@ -410,26 +405,23 @@ header p {
 .preview-box {
     width: 150px;
     height: 150px;
-    background: #ffffff; /* Default background for box-shadow & border-radius */
-    border-radius: 15px; /* Default border radius for preview box */
+    background: #ffffff; 
+    border-radius: 15px;  
     transition: box-shadow 0.1s ease-out, border-radius 0.1s ease-out, background 0.1s ease-out, text-shadow 0.1s ease-out, color 0.1s ease-out; /* Smooth transition for all changes */
-    display: flex; /* For text preview */
-    align-items: center; /* For text preview */
-    justify-content: center; /* For text preview */
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* Add a subtle default shadow for better visibility */
+    display: flex;  
+    align-items: center; 
+    justify-content: center; 
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);  
+
+ .preview-box.wide-preview {
+    width: 100%;  
+    height: 100px;  
+    background: linear-gradient(90deg, #0056e6, #00d4ff); 
 }
 
-/* Specific styles for Linear Gradient preview */
-.preview-box.wide-preview {
-    width: 100%; /* Make gradient preview wider */
-    height: 100px; /* Adjust height for gradient */
-    background: linear-gradient(90deg, #0056e6, #00d4ff); /* Default gradient */
-}
-
-/* Specific styles for Text Shadow preview */
-.preview-box.text-preview {
-    background: #444; /* Darker background for text contrast */
-    color: #ffffff; /* Default text color */
+ .preview-box.text-preview {
+    background: #444;  
+    color: #ffffff;  
     font-size: 36px;
     font-weight: 700;
     text-align: center;
@@ -437,8 +429,8 @@ header p {
     align-items: center;
     justify-content: center;
     padding: 10px;
-    overflow: hidden; /* Prevent text overflow */
-    border-radius: 8px; /* Slightly less rounded for text preview */
+    overflow: hidden; 
+    border-radius: 8px; 
 }
 
 
@@ -457,12 +449,12 @@ header p {
     border-radius: 8px;
     padding: 15px;
     color: #fff;
-    font-family: 'Fira Code', 'Cascadia Code', monospace; /* Add more monospace options */
+    font-family: 'Fira Code', 'Cascadia Code', monospace;  
     font-size: 0.9em;
     resize: vertical;
     min-height: 80px;
-    white-space: pre-wrap; /* Preserve formatting */
-    word-wrap: break-word; /* Break long words */
+    white-space: pre-wrap;  
+    word-wrap: break-word;  
 }
 
 .copy-button {
@@ -484,7 +476,7 @@ header p {
 .copy-message {
     font-size: 0.8em;
     opacity: 0;
-    color: #28a745; /* Green for success */
+    color: #28a745; 
     transition: opacity 0.3s ease;
 }
 
@@ -492,45 +484,37 @@ header p {
     opacity: 1;
 }
 
-/* In your style.css */
-
-/* Resume Section */
-.resume-display {
+ 
+ .resume-display {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 30px;
-    /* max-width: 800px;  Optional: constrain width of the resume display area */
-    /* margin: 0 auto;    Optional: center the resume display area */
-}
+ }
 
-/* In your style.css */
-
-/* Resume Section */
-.resume-display {
+ 
+ .resume-display {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 30px;
-    /* --- NEW/ADJUSTED STYLES BELOW --- */
-    max-width: 750px; /* ⭐ CONTROL THE MAX WIDTH OF THE ENTIRE RESUME PANEL */
-    margin: 0 auto;  /* ⭐ CENTER THE RESUME PANEL WITHIN THE CONTENT AREA */
-    /* --- END NEW/ADJUSTED STYLES --- */
+     max-width: 750px;  
+    margin: 0 auto;   
+ 
 }
 
 .resume-display img {
-    max-width: 100%; /* Ensures the image fits within its parent (.resume-display) */
-    height: auto; /* Maintains aspect ratio */
+    max-width: 100%; 
+    height: auto;  
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     cursor: zoom-in;
 }
 
-/* Optional: Add a simple hover effect to suggest it's interactive */
-.resume-display img:hover {
+ .resume-display img:hover {
     transform: scale(1.01);
 }
 
@@ -542,8 +526,7 @@ header p {
 }
 
 
-/* Contact Section */
-.contact-grid {
+ .contact-grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     text-align: center;
 }
@@ -575,8 +558,7 @@ header p {
 }
 
 
-/* Apple-style liquid effects (from your original CSS) */
-.menu li::after {
+ .menu li::after {
     content: '';
     position: absolute;
     top: 0;
@@ -614,10 +596,9 @@ header p {
         padding: 30px;
     }
 
-    /* CSS playground alignment for tablets/smaller desktops */
-    #css-playground-content .glass-panel-wrapper {
-        grid-template-columns: 1fr; /* Force single column on tablets */
-        max-width: 600px; /* Center the single column better */
+     #css-playground-content .glass-panel-wrapper {
+        grid-template-columns: 1fr;  
+        max-width: 600px; 
         margin-left: auto;
         margin-right: auto;
     }
@@ -627,7 +608,7 @@ header p {
     }
     
     .css-generator-panel {
-        max-width: unset; /* Allow full width of the grid cell */
+        max-width: unset; 
     }
     .controls {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -692,9 +673,9 @@ header p {
     }
 
     #css-playground-content .glass-panel-wrapper {
-        grid-template-columns: 1fr; /* Force single column on very small screens */
-        max-width: unset; /* Let it expand to parent width */
-        margin-left: 0; /* Remove auto margins to avoid pushing into padding */
+        grid-template-columns: 1fr; 
+        max-width: unset; 
+        margin-left: 0;  
         margin-right: 0;
     }
 
@@ -703,153 +684,141 @@ header p {
     }
 
     .controls {
-        grid-template-columns: 1fr; /* Stack controls on very small screens */
+        grid-template-columns: 1fr;  
     }
     .preview-output-area {
         flex-direction: column;
     }
 }
-/* --- RESPONSIVE DESIGN FOR MOBILE DEVICES (ADD THIS TO THE END OF style.css) --- */
-
-/* Styles for screens up to 768px wide (typical for tablets in portrait and all phones) */
-@media (max-width: 768px) {
-    /* General Adjustments for Smaller Screens */
-    body {
-        font-size: 16px; /* Slightly adjust base font size for readability */
+ 
+ @media (max-width: 768px) {
+     body {
+        font-size: 16px;  
     }
 
     .content-section {
-        padding: 30px 15px; /* Reduce horizontal padding for main sections */
-        margin-top: 50px; /* Adjust top margin for sections */
+        padding: 30px 15px;  
+        margin-top: 50px;  
     }
 
     .glass-panel {
-        padding: 20px; /* Slightly reduce padding inside glass panels */
-        border-radius: 10px; /* A bit less rounded on smaller elements */
+        padding: 20px;  
+        border-radius: 10px;  
     }
 
-    /* Navbar Adjustments */
-    .navbar {
-        flex-direction: column; /* Stack nav items vertically */
-        align-items: center; /* Center items when stacked */
-        padding: 15px 10px; /* Adjust padding */
-        position: relative; /* Maintain position */
+     .navbar {
+        flex-direction: column;  
+        align-items: center;  
+        padding: 15px 10px; 
+        position: relative; 
     }
 
     .navbar h1 {
-        font-size: 1.8em; /* Adjust title size */
-        margin-bottom: 15px; /* Space between title and nav links */
+        font-size: 1.8em; 
+        margin-bottom: 15px;  
     }
 
     .navbar .nav-links {
-        flex-direction: column; /* Stack navigation links */
-        gap: 10px; /* Space between stacked links */
-        width: 100%; /* Make links take full width for easier tapping */
+        flex-direction: column;  
+        gap: 10px; 
+        width: 100%;  
         text-align: center;
     }
 
     .navbar .nav-links a {
-        padding: 10px 0; /* Adjust link padding */
-        width: 90%; /* Give links some width */
-        margin: 0 auto; /* Center links */
+        padding: 10px 0; 
+        width: 90%;  
+        margin: 0 auto;  
     }
 
-    /* Adjusting Grid Layouts to Stack Vertically */
-    .glass-panel-wrapper {
-        grid-template-columns: 1fr; /* Forces all grid items to stack in a single column */
-        gap: 25px; /* Adjust gap between stacked items */
+     .glass-panel-wrapper {
+        grid-template-columns: 1fr;  
+        gap: 25px; 
     }
 
-    /* Hero Section Specific Adjustments */
-    .hero-section .hero-content {
-        flex-direction: column; /* Stack text and image vertically */
-        text-align: center; /* Center align text */
-        gap: 30px; /* Space between stacked items */
+     .hero-section .hero-content {
+        flex-direction: column;  
+        text-align: center;  
+        gap: 30px;  
     }
 
     .hero-section .hero-image {
-        max-width: 80%; /* Make image smaller for mobile */
-        height: auto; /* Maintain aspect ratio */
-        margin-top: 20px; /* Add space above image if it's below text */
+        max-width: 80%;  
+        height: auto; 
+        margin-top: 20px;  
     }
 
     .hero-section h1 {
-        font-size: 2.2em; /* Adjust hero title size */
+        font-size: 2.2em; 
     }
 
-    /* Resume Display Adjustments */
-    .resume-display {
-        padding: 20px 10px; /* Adjust padding for the resume container */
-        max-width: 95%; /* Allow resume image to fill more width on mobile */
+     .resume-display {
+        padding: 20px 10px;  
+        max-width: 95%;  
     }
 
     .resume-display img {
-        border-radius: 5px; /* Slightly reduce border radius for smaller screens */
+        border-radius: 5px;  
     }
 
-    /* Skills Grid Adjustments */
-    .skills-grid .glass-panel {
-        text-align: center; /* Center content in skill cards */
+     .skills-grid .glass-panel {
+        text-align: center;  
     }
 
-    /* Contact Form Adjustments */
-    .contact-form .form-group {
-        flex-direction: column; /* Stack labels and inputs vertically */
-        align-items: flex-start; /* Align labels to the left */
+     .contact-form .form-group {
+        flex-direction: column;  
+        align-items: flex-start; 
     }
 
     .contact-form .form-group label {
-        width: 100%; /* Labels take full width */
-        margin-bottom: 5px; /* Space between label and input */
+        width: 100%;  
+        margin-bottom: 5px;  
     }
 
     .contact-form .form-group input,
     .contact-form .form-group textarea {
-        width: 100%; /* Inputs take full width */
+        width: 100%; 
     }
 
     .contact-form button {
-        width: 100%; /* Make the submit button full width */
+        width: 100%;  
     }
 
-    /* CSS Playground Specific Adjustments */
-    .playground-grid {
-        grid-template-columns: 1fr; /* Stack playground tools vertically */
+     .playground-grid {
+        grid-template-columns: 1fr;  
         gap: 25px;
     }
     .playground-tool h3 {
-        font-size: 1.3em; /* Adjust tool title size */
+        font-size: 1.3em;  
     }
     .playground-tool label {
-        font-size: 0.9em; /* Adjust label font size */
+        font-size: 0.9em; 
     }
     .playground-code-output pre {
-        font-size: 0.8em; /* Adjust code output font size for readability */
+        font-size: 0.8em;  
         padding: 10px;
     }
 
-    /* Back to Top Button Adjustments */
-    #backToTopBtn {
-        bottom: 20px; /* Move slightly up from bottom */
-        right: 20px; /* Move slightly in from right */
-        padding: 12px; /* Smaller button */
-        font-size: 16px; /* Smaller icon */
+     #backToTopBtn {
+        bottom: 20px;  
+        right: 20px;  
+        padding: 12px; 
+        font-size: 16px;  
     }
 }
 
-/* Optional: Further minor adjustments for very small phone screens (e.g., max-width: 480px) */
-@media (max-width: 480px) {
+ @media (max-width: 480px) {
     .content-section {
-        padding: 20px 10px; /* Even less padding for very small screens */
+        padding: 20px 10px;  
     }
     .navbar {
         padding: 10px;
     }
     .navbar h1 {
-        font-size: 1.5em; /* Smaller title */
+        font-size: 1.5em;  
     }
-    h1 { font-size: 2em; } /* Adjust all main headings */
+    h1 { font-size: 2em; }  
     h2 { font-size: 1.6em; }
     h3 { font-size: 1.3em; }
-    p { font-size: 0.9em; } /* Adjust body text */
+    p { font-size: 0.9em; } 
 }
