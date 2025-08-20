@@ -3,309 +3,883 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joel Inian Francis - Portfolio</title>
-    <link rel="stylesheet" href="style.css">  
+    <title>Joel Inian Francis - AI/ML Engineer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <aside class="sidebar">
-            <div class="logo">
-                <i class="fas fa-code"></i>
-            </div> 
-            <nav class="menu">
-                <ul>
-                    <li class="active" data-section="home">
-                        <a href="#">
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-text">Loading Portfolio...</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="portfolio-container">
+        <!-- Header/Navigation -->
+        <header class="header" id="header">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <div class="logo">
+                        <i class="fas fa-code"></i>
+                        <span class="logo-text">JIF</span>
+                    </div>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active" data-section="home">
                             <i class="fas fa-home"></i>
                             <span>Home</span>
                         </a>
                     </li>
-                    <li data-section="skills">
-                        <a href="#">
-                            <i class="fas fa-lightbulb"></i>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link" data-section="about">
+                            <i class="fas fa-user"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link" data-section="skills">
+                            <i class="fas fa-cogs"></i>
                             <span>Skills</span>
                         </a>
                     </li>
-                    <li data-section="css-playground">
-                        <a href="#">
-                            <i class="fas fa-palette"></i>
-                            <span>CSS Playground</span>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link" data-section="projects">
+                            <i class="fas fa-folder-open"></i>
+                            <span>Projects</span>
                         </a>
                     </li>
-                    <li data-section="resume">
-                        <a href="#">
+                    <li class="nav-item">
+                        <a href="#experience" class="nav-link" data-section="experience">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Experience</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#css-playground" class="nav-link" data-section="css-playground">
+                            <i class="fas fa-palette"></i>
+                            <span>CSS Tools</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resume" class="nav-link" data-section="resume">
                             <i class="fas fa-file-alt"></i>
                             <span>Resume</span>
                         </a>
                     </li>
-                    <li data-section="contact">
-                        <a href="#">
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link" data-section="contact">
                             <i class="fas fa-envelope"></i>
                             <span>Contact</span>
                         </a>
                     </li>
                 </ul>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </nav>
-            <div class="profile">
-                <div class="avatar">
-                    <img src="https://images.pexels.com/photos/3394660/pexels-photo-3394660.jpeg" alt="Profile">
-                </div>
-                <div class="user-info">
-                    <h3>Joel Inian Francis</h3>
-                    <p>B.Tech CSE (AIML)</p>
-                </div>
-            </div>
-        </aside>
-        <main class="content">
-            <div id="home-content" class="content-section active">
-                <header>
-                    <h1>Welcome! ✨
-</h1>
-                    <p>Glad to have you here. Explore my work and journey.</p>
-                </header>
-                <div class="glass-panel-wrapper">
-                    <div class="glass-panel">
-                        <h2>About Me</h2>
-<p>
-                            I am a dedicated B.Tech Computer Science and Engineering student specializing in Artificial Intelligence &amp; Machine Learning at Christ University, Bengaluru.<br><br>
-                            My academic journey is fueled by a strong curiosity for intelligent systems and a passion for applying technology to real-world problems.<br><br>
-                            I have a solid technical foundation in Python and core Machine Learning concepts, along with front-end development skills (HTML, CSS, JavaScript) that allow me to create both functional and visually engaging user experiences.<br><br>
-                            During my Data Analytics internship at Vdart, I gained hands-on experience in extracting insights from complex datasets and turning them into actionable strategies. This experience deepened my interest in data-driven problem-solving and strengthened my analytical skills.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        </header>
 
-            <div id="skills-content" class="content-section">
-                <header>
-                    <h1>My Skills</h1>
-                    <p>The tools and technologies I'm proficient in.</p>
-                </header>
-                <div class="glass-panel-wrapper skill-grid">
-                    <div class="glass-panel skill-card">
-                        <i class="fab fa-python"></i>
-                        <h3>Python</h3>
-                    </div>
-                    <div class="glass-panel skill-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Data Analytics</h3>
-                    </div>
-                    <div class="glass-panel skill-card">
-                        <i class="fab fa-java"></i>
-                        <h3>Java</h3>
-                    </div>
-                    <div class="glass-panel skill-card">
-                        <i class="fas fa-brain"></i>
-                        <h3>Machine Learning</h3>
-                    </div>
-                    <div class="glass-panel skill-card">
-                        <i class="fas fa-code"></i>
-                        <h3>Front-End Development</h3>
-                        <p>(HTML, CSS, JavaScript)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="css-playground-content" class="content-section">
-                <header>
-                    <h1>CSS Playground</h1>
-                    <p>Experiment with common CSS properties and generate code snippets instantly. 🎨</p>
-                </header>
-
-                <div class="glass-panel css-generator-panel">
-                    <h2>Box Shadow Generator</h2>
-                    <div class="controls">
-                        <div class="control-group">
-                            <label for="shadowOffsetX">Horizontal Offset:</label>
-                            <input type="range" id="shadowOffsetX" min="-50" max="50" value="5" />
-                            <span id="shadowOffsetX-value">5px</span>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <div class="hero-image">
+                            <img src="https://images.pexels.com/photos/3394660/pexels-photo-3394660.jpeg" alt="Joel Inian Francis" class="profile-img">
                         </div>
-                        <div class="control-group">
-                            <label for="shadowOffsetY">Vertical Offset:</label>
-                            <input type="range" id="shadowOffsetY" min="-50" max="50" value="5" />
-                            <span id="shadowOffsetY-value">5px</span>
-                        </div>
-                        <div class="control-group">
-                            <label for="shadowBlurRadius">Blur Radius:</label>
-                            <input type="range" id="shadowBlurRadius" min="0" max="100" value="10" />
-                            <span id="shadowBlurRadius-value">10px</span>
-                        </div>
-                        <div class="control-group">
-                            <label for="shadowSpreadRadius">Spread Radius:</label>
-                            <input type="range" id="shadowSpreadRadius" min="-20" max="50" value="0" />
-                            <span id="shadowSpreadRadius-value">0px</span>
-                        </div>
-                        <div class="control-group">
-                            <label for="shadowColor">Color:</label>
-                            <input type="color" id="shadowColor" value="#000000" />
-                        </div>
-                        <div class="control-group checkbox-group">
-                            <input type="checkbox" id="insetShadow">
-                            <label for="insetShadow">Inset Shadow</label>
-                        </div>
-                    </div>
-                    <div class="preview-output-area">
-                        <div id="box-shadow-preview-box" class="preview-box"></div>
-                        <div class="code-output">
-                            <textarea id="box-shadow-css-code" readonly rows="3"></textarea>
-                            <button class="copy-button" data-target="box-shadow-css-code">Copy CSS</button>
-                            <span class="copy-message" id="box-shadow-copy-message"></span>
+                        <div class="hero-text">
+                            <h1 class="hero-title">
+                                <span class="greeting">Hello, I'm</span>
+                                <span class="name">Joel Inian Francis</span>
+                                <span class="typing-text" id="typing-text"></span>
+                            </h1>
+                            <p class="hero-subtitle">
+                                B.Tech Computer Science & Engineering (AI/ML) student at Christ University, Bengaluru.
+                                Passionate about creating intelligent solutions and building engaging user experiences.
+                            </p>
+                            <div class="hero-cta">
+                                <button class="btn btn--primary" data-scroll-to="about">
+                                    <i class="fas fa-user"></i> About Me
+                                </button>
+                                <button class="btn btn--outline" data-scroll-to="contact">
+                                    <i class="fas fa-envelope"></i> Get in Touch
+                                </button>
+                            </div>
+                            <div class="social-links">
+                                <a href="mailto:francisjoelinian@gmail.com" class="social-link" aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/joelinianfrancis/" target="_blank" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/JojoAArtI" target="_blank" class="social-link" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="tel:+919940802121" class="social-link" aria-label="Phone">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="glass-panel css-generator-panel">
-                    <h2>Border Radius Generator</h2>
-                    <div class="controls">
-                        <div class="control-group">
-                            <label for="borderRadiusTopLeft">Top-Left:</label>
-                            <input type="range" id="borderRadiusTopLeft" min="0" max="100" value="10" />
-                            <span id="borderRadiusTopLeft-value">10px</span>
-                        </div>
-                        <div class="control-group">
-                            <label for="borderRadiusTopRight">Top-Right:</label>
-                            <input type="range" id="borderRadiusTopRight" min="0" max="100" value="10" />
-                            <span id="borderRadiusTopRight-value">10px</span>
-                        </div>
-                        <div class="control-group">
-                            <label for="borderRadiusBottomRight">Bottom-Right:</label>
-                            <input type="range" id="borderRadiusBottomRight" min="0" max="100" value="10" />
-                            <span id="borderRadiusBottomRight-value">10px</span>
-                        </div>
-                        <div class="control-group">
-                            <label for="borderRadiusBottomLeft">Bottom-Left:</label>
-                            <input type="range" id="borderRadiusBottomLeft" min="0" max="100" value="10" />
-                            <span id="borderRadiusBottomLeft-value">10px</span>
-                        </div>
+            <!-- About Section -->
+            <section id="about" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Get to know more about my background and journey</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text card">
+                        <h3>My Story</h3>
+                        <p>I am a dedicated B.Tech Computer Science and Engineering student specializing in Artificial Intelligence & Machine Learning at Christ University, Bengaluru.</p>
+                        <p>My academic journey is fueled by a strong curiosity for intelligent systems and a passion for applying technology to real-world problems. I have a solid technical foundation in Python and core Machine Learning concepts, along with front-end development skills that allow me to create both functional and visually engaging user experiences.</p>
+                        <p>During my Data Analytics internship at Vdart, I gained hands-on experience in extracting insights from complex datasets and turning them into actionable strategies. This experience deepened my interest in data-driven problem-solving and strengthened my analytical skills.</p>
                     </div>
-                    <div class="preview-output-area">
-                        <div id="border-radius-preview-box" class="preview-box"></div>
-                        <div class="code-output">
-                            <textarea id="border-radius-css-code" readonly rows="2"></textarea>
-                            <button class="copy-button" data-target="border-radius-css-code">Copy CSS</button>
-                            <span class="copy-message" id="border-radius-copy-message"></span>
+                    <div class="about-highlights">
+                        <div class="highlight-card card">
+                            <div class="highlight-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Data Analytics Experience</h4>
+                            <p>Gained hands-on experience at Vdart, extracting insights from complex datasets</p>
+                        </div>
+                        <div class="highlight-card card">
+                            <div class="highlight-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>AI/ML Specialization</h4>
+                            <p>Focused on artificial intelligence and machine learning technologies</p>
+                        </div>
+                        <div class="highlight-card card">
+                            <div class="highlight-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Full-Stack Skills</h4>
+                            <p>Proficient in both front-end and back-end development</p>
+                        </div>
+                        <div class="highlight-card card">
+                            <div class="highlight-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <h4>Problem Solver</h4>
+                            <p>Strong analytical mindset for tackling complex challenges</p>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="glass-panel css-generator-panel">
-                    <h2>Linear Gradient Generator</h2>
-                    <div class="controls">
-                        <div class="control-group">
-                            <label for="gradientAngle">Angle:</label>
-                            <input type="range" id="gradientAngle" min="0" max="360" value="90" />
-                            <span id="gradientAngle-value">90deg</span>
-                        </div>
-                        <div class="control-group">
-                            <label for="gradientColor1">Color 1:</label>
-                            <input type="color" id="gradientColor1" value="#0056e6" />
-                        </div>
-                        <div class="control-group">
-                            <label for="gradientColor2">Color 2:</label>
-                            <input type="color" id="gradientColor2" value="#00d4ff" />
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">My Skills</h2>
+                    <p class="section-subtitle">The technologies and tools I work with</p>
+                </div>
+                <div class="skills-container">
+                    <div class="skill-category card">
+                        <h3>Programming Languages</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item" data-skill="90">
+                                <div class="skill-info">
+                                    <i class="fab fa-python skill-icon"></i>
+                                    <span class="skill-name">Python</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-item" data-skill="85">
+                                <div class="skill-info">
+                                    <i class="fab fa-js-square skill-icon"></i>
+                                    <span class="skill-name">JavaScript</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-item" data-skill="80">
+                                <div class="skill-info">
+                                    <i class="fab fa-java skill-icon"></i>
+                                    <span class="skill-name">Java</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-item" data-skill="95">
+                                <div class="skill-info">
+                                    <i class="fab fa-html5 skill-icon"></i>
+                                    <span class="skill-name">HTML/CSS</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">95%</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="preview-output-area">
-                        <div id="linear-gradient-preview-box" class="preview-box wide-preview"></div>
-                        <div class="code-output">
-                            <textarea id="linear-gradient-css-code" readonly rows="2"></textarea>
-                            <button class="copy-button" data-target="linear-gradient-css-code">Copy CSS</button>
-                            <span class="copy-message" id="linear-gradient-copy-message"></span>
+                    
+                    <div class="skill-category card">
+                        <h3>AI/ML & Data</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item" data-skill="85">
+                                <div class="skill-info">
+                                    <i class="fas fa-brain skill-icon"></i>
+                                    <span class="skill-name">Machine Learning</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-item" data-skill="88">
+                                <div class="skill-info">
+                                    <i class="fas fa-chart-line skill-icon"></i>
+                                    <span class="skill-name">Data Analytics</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="skill-item" data-skill="82">
+                                <div class="skill-info">
+                                    <i class="fas fa-table skill-icon"></i>
+                                    <span class="skill-name">Pandas/NumPy</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">82%</span>
+                            </div>
+                            <div class="skill-item" data-skill="75">
+                                <div class="skill-info">
+                                    <i class="fas fa-network-wired skill-icon"></i>
+                                    <span class="skill-name">TensorFlow</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category card">
+                        <h3>Web Development</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item" data-skill="75">
+                                <div class="skill-info">
+                                    <i class="fab fa-react skill-icon"></i>
+                                    <span class="skill-name">React</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-item" data-skill="70">
+                                <div class="skill-info">
+                                    <i class="fab fa-node-js skill-icon"></i>
+                                    <span class="skill-name">Node.js</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="skill-item" data-skill="85">
+                                <div class="skill-info">
+                                    <i class="fab fa-css3-alt skill-icon"></i>
+                                    <span class="skill-name">CSS Frameworks</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-item" data-skill="80">
+                                <div class="skill-info">
+                                    <i class="fas fa-exchange-alt skill-icon"></i>
+                                    <span class="skill-name">REST APIs</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                                <span class="skill-percentage">80%</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="glass-panel css-generator-panel">
-                    <h2>Text Shadow Generator</h2>
-                    <div class="controls">
-                        <div class="control-group">
-                            <label for="textShadowOffsetX">Horizontal Offset:</label>
-                            <input type="range" id="textShadowOffsetX" min="-20" max="20" value="2" />
-                            <span id="textShadowOffsetX-value">2px</span>
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">My Projects</h2>
+                    <p class="section-subtitle">A showcase of my work and achievements</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status status--success">Complete</span>
+                            </div>
                         </div>
-                        <div class="control-group">
-                            <label for="textShadowOffsetY">Vertical Offset:</label>
-                            <input type="range" id="textShadowOffsetY" min="-20" max="20" value="2" />
-                            <span id="textShadowOffsetY-value">2px</span>
+                        <h3 class="project-title">Interactive CSS Playground</h3>
+                        <p class="project-description">A comprehensive CSS generator toolkit with real-time preview, multiple generators, and export functionality for developers.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Web APIs</span>
                         </div>
-                        <div class="control-group">
-                            <label for="textShadowBlurRadius">Blur Radius:</label>
-                            <input type="range" id="textShadowBlurRadius" min="0" max="20" value="4" />
-                            <span id="textShadowBlurRadius-value">4px</span>
-                        </div>
-                        <div class="control-group">
-                            <label for="textShadowColor">Color:</label>
-                            <input type="color" id="textShadowColor" value="#000000" />
-                        </div>
-                        <div class="control-group">
-                            <label for="textColor">Text Color:</label>
-                            <input type="color" id="textColor" value="#ffffff" />
+                        <div class="project-links">
+                            <a href="https://github.com/JojoAArtI" target="_blank" class="btn btn--sm">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <button class="btn btn--sm btn--primary" data-scroll-to="css-playground">
+                                <i class="fas fa-eye"></i> Demo
+                            </button>
                         </div>
                     </div>
-                    <div class="preview-output-area">
-                        <div id="text-shadow-preview-box" class="preview-box text-preview">
-                            <span>Text Shadow</span>
+
+                    <div class="project-card card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status status--warning">In Development</span>
+                            </div>
                         </div>
-                        <div class="code-output">
-                            <textarea id="text-shadow-css-code" readonly rows="2"></textarea>
-                            <button class="copy-button" data-target="text-shadow-css-code">Copy CSS</button>
-                            <span class="copy-message" id="text-shadow-copy-message"></span>
+                        <h3 class="project-title">ML Classification Model</h3>
+                        <p class="project-description">Predictive analysis model with comprehensive data preprocessing, visualization, and performance metrics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Jupyter</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/JojoAArtI" target="_blank" class="btn btn--sm">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <button class="btn btn--sm btn--outline" disabled>
+                                <i class="fas fa-clock"></i> Coming Soon
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="project-card card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status status--success">Complete</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Analytics Dashboard</h3>
+                        <p class="project-description">Comprehensive business intelligence dashboard with real-time data visualization and interactive charts.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Python Flask</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/JojoAArtI" target="_blank" class="btn btn--sm">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <button class="btn btn--sm btn--primary" disabled>
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="project-card card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="project-status">
+                                <span class="status status--success">Complete</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Professional Portfolio</h3>
+                        <p class="project-description">Modern, responsive portfolio website showcasing projects, skills, and professional experience.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/JojoAArtI" target="_blank" class="btn btn--sm">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <button class="btn btn--sm btn--primary" data-scroll-to="home">
+                                <i class="fas fa-eye"></i> Live Site
+                            </button>
                         </div>
                     </div>
                 </div>
+            </section>
 
-            </div>
-
-<div id="resume-content" class="content-section">
-    <header>
-        <h1>My Resume</h1>
-        <p>A detailed overview of my skills and experience.</p>
-    </header>
-    <div class="glass-panel resume-display">
-        <img
-            src="https://i.postimg.cc/zDChL2KR/portfolioresume-1.png" alt="My Professional Resume"
-            loading="lazy"
-        />
-        <p class="zoom-instruction">
-            (You can zoom in/out using your browser's native zoom or pinch-to-zoom on touch devices)
-        </p>
-    </div>
-
-</div>
-            
-            <div id="contact-content" class="content-section">
-                <header>
-                    <h1>Get in Touch</h1>
-                    <p>Feel free to connect with me! </p>
-                </header>
-                <div class="glass-panel-wrapper contact-grid">
-                  <a href="https://www.linkedin.com/in/joelinianfrancis/" target="_blank" rel="noopener noreferrer"class="glass-panel contact-card">
-                        <i class="fab fa-linkedin"></i>
-                        <h3>LinkedIn</h3>
-                        <p>Connect with me on LinkedIn</p>
-                    </a>
-                    <a href="tel:+919940802121" class="glass-panel contact-card">
-                        <i class="fas fa-phone"></i>
-                        <h3>Contact No.</h3>
-                        <p>+91 99408 02121</p>
-                    </a>
-                    <a href="https://github.com/JojoAArtI" target="_blank" class="glass-panel contact-card">
-                        <i class="fab fa-github"></i>
-                        <h3>GitHub</h3>
-                        <p>Explore my code on GitHub</p>
-                    </a>
-                    <a href="mailto:francisjoelinian@gmail.com" class="glass-panel contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>francisjoelinian@gmail.com</p>
-                    </a>
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Experience</h2>
+                    <p class="section-subtitle">My professional journey and achievements</p>
                 </div>
-            </div>
+                <div class="experience-timeline">
+                    <div class="timeline-item card">
+                        <div class="timeline-marker">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="experience-header">
+                                <h3>Data Analytics Intern</h3>
+                                <div class="experience-meta">
+                                    <span class="company">Vdart</span>
+                                    <span class="period">2024 (6 months)</span>
+                                    <span class="location">Remote</span>
+                                </div>
+                            </div>
+                            <p class="experience-description">
+                                Gained hands-on experience in extracting insights from complex datasets and turning them into actionable business strategies.
+                            </p>
+                            <div class="experience-achievements">
+                                <h4>Key Achievements:</h4>
+                                <ul>
+                                    <li>Improved data processing efficiency by 40%</li>
+                                    <li>Created 15+ interactive dashboards for stakeholders</li>
+                                    <li>Identified key business insights leading to strategic decisions</li>
+                                    <li>Mentored junior interns on data analysis techniques</li>
+                                </ul>
+                            </div>
+                            <div class="experience-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">SQL</span>
+                                <span class="tech-tag">Tableau</span>
+                                <span class="tech-tag">Power BI</span>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="timeline-item card">
+                        <div class="timeline-marker">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="experience-header">
+                                <h3>Student Developer</h3>
+                                <div class="experience-meta">
+                                    <span class="company">Christ University</span>
+                                    <span class="period">2022 - Present</span>
+                                    <span class="location">Bengaluru, India</span>
+                                </div>
+                            </div>
+                            <p class="experience-description">
+                                Active participation in academic projects, coding competitions, and peer mentoring while maintaining excellent academic performance.
+                            </p>
+                            <div class="experience-achievements">
+                                <h4>Key Achievements:</h4>
+                                <ul>
+                                    <li>Maintained CGPA above 8.5 throughout academic tenure</li>
+                                    <li>Won 2nd place in university-level hackathon</li>
+                                    <li>Successfully completed 10+ major projects</li>
+                                    <li>Contributed to open-source projects</li>
+                                </ul>
+                            </div>
+                            <div class="experience-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Web Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Playground Section -->
+            <section id="css-playground" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">CSS Playground</h2>
+                    <p class="section-subtitle">Interactive CSS generators with real-time preview 🎨</p>
+                </div>
+                
+                <div class="playground-container">
+                    <!-- Box Shadow Generator -->
+                    <div class="css-generator card">
+                        <div class="generator-header">
+                            <h3><i class="fas fa-square"></i> Box Shadow Generator</h3>
+                            <p>Create stunning box shadow effects</p>
+                        </div>
+                        <div class="generator-body">
+                            <div class="controls">
+                                <div class="control-group">
+                                    <label for="shadow-x">Horizontal Offset</label>
+                                    <div class="input-group">
+                                        <input type="range" id="shadow-x" min="-50" max="50" value="0">
+                                        <span class="value-display">0px</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label for="shadow-y">Vertical Offset</label>
+                                    <div class="input-group">
+                                        <input type="range" id="shadow-y" min="-50" max="50" value="5">
+                                        <span class="value-display">5px</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label for="shadow-blur">Blur Radius</label>
+                                    <div class="input-group">
+                                        <input type="range" id="shadow-blur" min="0" max="100" value="15">
+                                        <span class="value-display">15px</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label for="shadow-spread">Spread Radius</label>
+                                    <div class="input-group">
+                                        <input type="range" id="shadow-spread" min="-20" max="50" value="0">
+                                        <span class="value-display">0px</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label for="shadow-color">Shadow Color</label>
+                                    <input type="color" id="shadow-color" value="#000000">
+                                </div>
+                                <div class="control-group checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="shadow-inset">
+                                        <span>Inset Shadow</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="preview">
+                                <div class="preview-box" id="shadow-preview"></div>
+                            </div>
+                            <div class="output">
+                                <label for="shadow-code">CSS Code</label>
+                                <div class="code-container">
+                                    <textarea id="shadow-code" readonly rows="3"></textarea>
+                                    <button class="copy-btn" data-target="shadow-code">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Border Radius Generator -->
+                    <div class="css-generator card">
+                        <div class="generator-header">
+                            <h3><i class="fas fa-square"></i> Border Radius Generator</h3>
+                            <p>Design custom border radius styles</p>
+                        </div>
+                        <div class="generator-body">
+                            <div class="controls">
+                                <div class="control-group">
+                                    <label for="radius-tl">Top-Left</label>
+                                    <div class="input-group">
+                                        <input type="range" id="radius-tl" min="0" max="100" value="8">
+                                        <span class="value-display">8px</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label for="radius-tr">Top-Right</label>
+                                    <div class="input-group">
+                                        <input type="range" id="radius-tr" min="0" max="100" value="8">
+                                        <span class="value-display">8px</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label for="radius-br">Bottom-Right</label>
+                                    <div class="input-group">
+                                        <input type="range" id="radius-br" min="0" max="100" value="8">
+                                        <span class="value-display">8px</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label for="radius-bl">Bottom-Left</label>
+                                    <div class="input-group">
+                                        <input type="range" id="radius-bl" min="0" max="100" value="8">
+                                        <span class="value-display">8px</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview">
+                                <div class="preview-box" id="radius-preview"></div>
+                            </div>
+                            <div class="output">
+                                <label for="radius-code">CSS Code</label>
+                                <div class="code-container">
+                                    <textarea id="radius-code" readonly rows="2"></textarea>
+                                    <button class="copy-btn" data-target="radius-code">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gradient Generator -->
+                    <div class="css-generator card">
+                        <div class="generator-header">
+                            <h3><i class="fas fa-palette"></i> Gradient Generator</h3>
+                            <p>Create beautiful gradient backgrounds</p>
+                        </div>
+                        <div class="generator-body">
+                            <div class="controls">
+                                <div class="control-group">
+                                    <label for="gradient-angle">Direction</label>
+                                    <div class="input-group">
+                                        <input type="range" id="gradient-angle" min="0" max="360" value="90">
+                                        <span class="value-display">90deg</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label for="gradient-color1">Start Color</label>
+                                    <input type="color" id="gradient-color1" value="#667eea">
+                                </div>
+                                <div class="control-group">
+                                    <label for="gradient-color2">End Color</label>
+                                    <input type="color" id="gradient-color2" value="#764ba2">
+                                </div>
+                            </div>
+                            <div class="preview">
+                                <div class="preview-box gradient-preview" id="gradient-preview"></div>
+                            </div>
+                            <div class="output">
+                                <label for="gradient-code">CSS Code</label>
+                                <div class="code-container">
+                                    <textarea id="gradient-code" readonly rows="2"></textarea>
+                                    <button class="copy-btn" data-target="gradient-code">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Shadow Generator -->
+                    <div class="css-generator card">
+                        <div class="generator-header">
+                            <h3><i class="fas fa-font"></i> Text Shadow Generator</h3>
+                            <p>Create eye-catching text shadow effects</p>
+                        </div>
+                        <div class="generator-body">
+                            <div class="controls">
+                                <div class="control-group">
+                                    <label for="text-shadow-x">Horizontal Offset</label>
+                                    <div class="input-group">
+                                        <input type="range" id="text-shadow-x" min="-20" max="20" value="2">
+                                        <span class="value-display">2px</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label for="text-shadow-y">Vertical Offset</label>
+                                    <div class="input-group">
+                                        <input type="range" id="text-shadow-y" min="-20" max="20" value="2">
+                                        <span class="value-display">2px</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label for="text-shadow-blur">Blur Radius</label>
+                                    <div class="input-group">
+                                        <input type="range" id="text-shadow-blur" min="0" max="20" value="4">
+                                        <span class="value-display">4px</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label for="text-shadow-color">Shadow Color</label>
+                                    <input type="color" id="text-shadow-color" value="#000000">
+                                </div>
+                                <div class="control-group">
+                                    <label for="text-color">Text Color</label>
+                                    <input type="color" id="text-color" value="#333333">
+                                </div>
+                            </div>
+                            <div class="preview">
+                                <div class="preview-box text-preview" id="text-shadow-preview">
+                                    <span>Text Shadow</span>
+                                </div>
+                            </div>
+                            <div class="output">
+                                <label for="text-shadow-code">CSS Code</label>
+                                <div class="code-container">
+                                    <textarea id="text-shadow-code" readonly rows="3"></textarea>
+                                    <button class="copy-btn" data-target="text-shadow-code">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resume Section -->
+            <section id="resume" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">My Resume</h2>
+                    <p class="section-subtitle">A detailed overview of my skills and experience</p>
+                </div>
+                <div class="resume-container card">
+                    <div class="resume-controls">
+                        <button class="btn btn--sm" id="zoom-in">
+                            <i class="fas fa-search-plus"></i> Zoom In
+                        </button>
+                        <button class="btn btn--sm" id="zoom-out">
+                            <i class="fas fa-search-minus"></i> Zoom Out
+                        </button>
+                        <button class="btn btn--sm" id="reset-zoom">
+                            <i class="fas fa-undo"></i> Reset
+                        </button>
+                        <a href="https://i.postimg.cc/zDChL2KR/portfolioresume-1.png" target="_blank" class="btn btn--sm btn--primary">
+                            <i class="fas fa-external-link-alt"></i> Full Size
+                        </a>
+                        <a href="https://i.postimg.cc/zDChL2KR/portfolioresume-1.png" download="Joel_Inian_Francis_Resume.png" class="btn btn--sm btn--outline">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                    <div class="resume-viewer" id="resume-viewer">
+                        <img src="https://i.postimg.cc/zDChL2KR/portfolioresume-1.png" alt="Joel Inian Francis Resume" id="resume-image">
+                    </div>
+                    <p class="zoom-instruction">Use controls above, mouse wheel, or pinch to zoom. Drag to pan around the image.</p>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Get in Touch</h2>
+                    <p class="section-subtitle">Feel free to reach out for collaborations or opportunities</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-form-container card">
+                        <h3>Send me a message</h3>
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <input type="text" id="subject" name="subject" class="form-control" required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                                <span class="error-message"></span>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-cards">
+                            <div class="contact-card card" data-copy="francisjoelinian@gmail.com">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h4>Email</h4>
+                                <p>francisjoelinian@gmail.com</p>
+                                <button class="copy-contact-btn">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <div class="contact-card card" data-copy="+91 99408 02121">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h4>Phone</h4>
+                                <p>+91 99408 02121</p>
+                                <button class="copy-contact-btn">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <a href="https://www.linkedin.com/in/joelinianfrancis/" target="_blank" class="contact-card card">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <h4>LinkedIn</h4>
+                                <p>Connect with me</p>
+                                <span class="external-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </span>
+                            </a>
+                            <a href="https://github.com/JojoAArtI" target="_blank" class="contact-card card">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <h4>GitHub</h4>
+                                <p>View my code</p>
+                                <span class="external-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+        <div class="scroll-progress"></div>
+    </button>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+        <button class="toast-close" aria-label="Close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <script src="app.js"></script>
 </body>
 </html>
