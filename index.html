@@ -6,9 +6,21 @@
     <title>Joel Inian Francis - AI/ML Engineer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-code"></i><span>JIF</span>
+            </div>
+            <canvas id="c" width="16" height="16"></canvas>
+            <p class="loading-text">Loading...</p>
+        </div>
+    </div>
 
     <!-- Main Container -->
     <div class="portfolio-container">
@@ -16,12 +28,13 @@
         <header class="header" id="header">
             <nav class="nav">
                 <div class="nav-brand">
-                    <div class="logo">
-                        <i class="fas fa-code"></i>
+                    <a href="#home" class="logo" aria-label="Go to homepage">
+                        <i class="fas fa-code" aria-hidden="true"></i>
                         <span class="logo-text">JIF</span>
-                    </div>
+                    </a>
                 </div>
                 <ul class="nav-menu" id="nav-menu">
+                    <span class="nav-highlighter"></span>
                     <li class="nav-item">
                         <a href="#home" class="nav-link active" data-section="home">
                             <i class="fas fa-home"></i>
@@ -50,12 +63,6 @@
                         <a href="#experience" class="nav-link" data-section="experience">
                             <i class="fas fa-briefcase"></i>
                             <span>Experience</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#css-playground" class="nav-link" data-section="css-playground">
-                            <i class="fas fa-palette"></i>
-                            <span>CSS Tools</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -137,9 +144,9 @@
                 <div class="about-content">
                     <div class="about-text card">
                         <h3>My Story</h3>
-                        <p>I am a student pursing Btech Computer Science and Engineering specializing in Artificial Intelligence & Machine Learning at Christ University, Bengaluru.</p>
-                        <p>I have a very high curiosity on how things work and a burning passion for Learning new Thingg-+. I have a good technical foundation in Python and core Machine Learning concepts, slo with front-end skills that allow me to create both functional and visually engaging UI/UXs.</p>
-                        <p>During my Data Analytics internship at Vdart, I gained much more experience in getting data fromx datasets and turning them into actionable strategies. This experience made my interest in data-driven problem-solving high and strengthened my analytical skills.</p>
+                        <p>I am a student pursuing a B.Tech in Computer Science and Engineering with a specialization in Artificial Intelligence & Machine Learning at Christ University, Bengaluru.</p>
+                        <p>Driven by a deep curiosity for how things work and a passion for continuous learning, I have built a strong technical foundation in Python, core Machine Learning concepts, and front-end development, enabling me to create functional and visually engaging user experiences.</p>
+                        <p>During my Data Analytics internship at Vdart, I gained valuable experience in transforming complex datasets into actionable business strategies. This role solidified my interest in data-driven problem-solving and significantly strengthened my analytical skills.</p>
                     </div>
                     <div class="about-highlights">
                         <div class="highlight-card card">
@@ -161,7 +168,7 @@
                                 <i class="fas fa-code"></i>
                             </div>
                             <h4>Front End Skills</h4>
-                            <p>Proficient in Front End ig</p>
+                            <p>Proficient in creating engaging and responsive user interfaces</p>
                         </div>
                         <div class="highlight-card card">
                             <div class="highlight-icon">
@@ -178,145 +185,40 @@
             <section id="skills" class="section">
                 <div class="section-header">
                     <h2 class="section-title">My Skills</h2>
-                    <p class="section-subtitle">TBH these are all just random</p>
+                    <p class="section-subtitle">A summary of my technical capabilities</p>
                 </div>
                 <div class="skills-container">
-                    <div class="skill-category card">
-                        <h3>Programming Languages</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item" data-skill="90">
-                                <div class="skill-info">
-                                    <i class="fab fa-python skill-icon"></i>
-                                    <span class="skill-name">Python</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">90%</span>
-                            </div>
-                            <div class="skill-item" data-skill="85">
-                                <div class="skill-info">
-                                    <i class="fab fa-js-square skill-icon"></i>
-                                    <span class="skill-name">JavaScript</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">85%</span>
-                            </div>
-                            <div class="skill-item" data-skill="80">
-                                <div class="skill-info">
-                                    <i class="fab fa-java skill-icon"></i>
-                                    <span class="skill-name">Java</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">80%</span>
-                            </div>
-                            <div class="skill-item" data-skill="95">
-                                <div class="skill-info">
-                                    <i class="fab fa-html5 skill-icon"></i>
-                                    <span class="skill-name">HTML/CSS</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">95%</span>
-                            </div>
-                        </div>
+                    <div class="skill-sphere-container">
+                        <canvas id="skill-canvas" width="600" height="600"></canvas>
                     </div>
-                    
-                    <div class="skill-category card">
-                        <h3>AI/ML & Data</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item" data-skill="85">
-                                <div class="skill-info">
-                                    <i class="fas fa-brain skill-icon"></i>
-                                    <span class="skill-name">Machine Learning</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">85%</span>
-                            </div>
-                            <div class="skill-item" data-skill="88">
-                                <div class="skill-info">
-                                    <i class="fas fa-chart-line skill-icon"></i>
-                                    <span class="skill-name">Data Analytics</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">88%</span>
-                            </div>
-                            <div class="skill-item" data-skill="82">
-                                <div class="skill-info">
-                                    <i class="fas fa-table skill-icon"></i>
-                                    <span class="skill-name">Pandas/NumPy</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">82%</span>
-                            </div>
-                            <div class="skill-item" data-skill="60">
-                                <div class="skill-info">
-                                    <i class="fas fa-network-wired skill-icon"></i>
-                                    <span class="skill-name">TensorFlow</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">60%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category card">
-                        <h3>Web Development</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item" data-skill="50">
-                                <div class="skill-info">
-                                    <i class="fab fa-react skill-icon"></i>
-                                    <span class="skill-name">React</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">50%</span>
-                            </div>
-                            <div class="skill-item" data-skill="70">
-                                <div class="skill-info">
-                                    <i class="fab fa-node-js skill-icon"></i>
-                                    <span class="skill-name">Node.js</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">70%</span>
-                            </div>
-                            <div class="skill-item" data-skill="45">
-                                <div class="skill-info">
-                                    <i class="fab fa-css3-alt skill-icon"></i>
-                                    <span class="skill-name">CSS Frameworks</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">45%</span>
-                            </div>
-                            <div class="skill-item" data-skill="60">
-                                <div class="skill-info">
-                                    <i class="fas fa-exchange-alt skill-icon"></i>
-                                    <span class="skill-name">REST APIs</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                                <span class="skill-percentage">60%</span>
-                            </div>
-                        </div>
+                    <div id="skill-tags" style="display: none;">
+                        <ul>
+                            <!-- Programming Languages -->
+                            <li><a href="#">Python</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                            <li><a href="#">Java</a></li>
+                            <li><a href="#">HTML/CSS</a></li>
+                            <!-- AI/ML & Data -->
+                            <li><a href="#">Machine Learning</a></li>
+                            <li><a href="#">Data Analytics</a></li>
+                            <li><a href="#">Pandas/NumPy</a></li>
+                            <li><a href="#">TensorFlow</a></li>
+                            <li><a href="#">Scikit-learn</a></li>
+                            <li><a href="#">Jupyter</a></li>
+                            <li><a href="#">PostgreSQL</a></li>
+                            <!-- Web Development -->
+                            <li><a href="#">React</a></li>
+                            <li><a href="#">Node.js</a></li>
+                            <li><a href="#">CSS Frameworks</a></li>
+                            <li><a href="#">REST APIs</a></li>
+                            <li><a href="#">Web APIs</a></li>
+                            <!-- Other -->
+                            <li><a href="#">PowerBI</a></li>
+                            <li><a href="#">Docker</a></li>
+                            <li><a href="#">HuggingFace</a></li>
+                            <li><a href="#">SQL</a></li>
+                            <li><a href="#">Tableau</a></li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -418,7 +320,7 @@
                             </div>
                         </div>
                         <h3 class="project-title">Markdown to Html</h3>
-                        <p class="project-description">As the name suggests.</p>
+                        <p class="project-description">A simple and effective tool to convert Markdown text into HTML.</p>
                         <div class="project-tech">
                             <span class="tech-tag">PowerBi</span>
                             <span class="tech-tag">Python</span>
@@ -511,13 +413,6 @@
                                 <i class="fas fa-eye"></i> Live Site
                             </button>
                         </div>
-                    </div>" target="_blank" class="btn btn--sm">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <button class="btn btn--sm btn--primary" data-scroll-to="home">
-                                <i class="fas fa-eye"></i> Live Site
-                            </button>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -578,12 +473,12 @@
                                 </div>
                             </div>
                             <p class="experience-description">
-Tryning my best to do more                            </p>
+                                Actively developing projects and contributing to the tech community while pursuing my degree.
+                            </p>
                             <div class="experience-achievements">
                                 <h4>Key Achievements:</h4>
                                 <ul>
-                                    <li>Not Much</li>
-                                   
+                                    <li>Developed multiple personal projects, including a full-stack text summarizer and interactive CSS tools.</li>
                                 </ul>
                             </div>
                             <div class="experience-tech">
@@ -591,224 +486,6 @@ Tryning my best to do more                            </p>
                                 <span class="tech-tag">Java</span>
                                 <span class="tech-tag">Machine Learning</span>
                                 <span class="tech-tag">Web Development</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CSS Playground Section -->
-            <section id="css-playground" class="section">
-                <div class="section-header">
-                    <h2 class="section-title">CSS Playground</h2>
-                    <p class="section-subtitle">Interactive CSS generators with real-time preview 🎨</p>
-                </div>
-                
-                <div class="playground-container">
-                    <!-- Box Shadow Generator -->
-                    <div class="css-generator card">
-                        <div class="generator-header">
-                            <h3><i class="fas fa-square"></i> Box Shadow Generator</h3>
-                            <p>Create stunning box shadow effects</p>
-                        </div>
-                        <div class="generator-body">
-                            <div class="controls">
-                                <div class="control-group">
-                                    <label for="shadow-x">Horizontal Offset</label>
-                                    <div class="input-group">
-                                        <input type="range" id="shadow-x" min="-50" max="50" value="0">
-                                        <span class="value-display">0px</span>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="shadow-y">Vertical Offset</label>
-                                    <div class="input-group">
-                                        <input type="range" id="shadow-y" min="-50" max="50" value="5">
-                                        <span class="value-display">5px</span>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="shadow-blur">Blur Radius</label>
-                                    <div class="input-group">
-                                        <input type="range" id="shadow-blur" min="0" max="100" value="15">
-                                        <span class="value-display">15px</span>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="shadow-spread">Spread Radius</label>
-                                    <div class="input-group">
-                                        <input type="range" id="shadow-spread" min="-20" max="50" value="0">
-                                        <span class="value-display">0px</span>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="shadow-color">Shadow Color</label>
-                                    <input type="color" id="shadow-color" value="#000000">
-                                </div>
-                                <div class="control-group checkbox-group">
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" id="shadow-inset">
-                                        <span>Inset Shadow</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="preview">
-                                <div class="preview-box" id="shadow-preview"></div>
-                            </div>
-                            <div class="output">
-                                <label for="shadow-code">CSS Code</label>
-                                <div class="code-container">
-                                    <textarea id="shadow-code" readonly rows="3"></textarea>
-                                    <button class="copy-btn" data-target="shadow-code">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Border Radius Generator -->
-                    <div class="css-generator card">
-                        <div class="generator-header">
-                            <h3><i class="fas fa-square"></i> Border Radius Generator</h3>
-                            <p>Design custom border radius styles</p>
-                        </div>
-                        <div class="generator-body">
-                            <div class="controls">
-                                <div class="control-group">
-                                    <label for="radius-tl">Top-Left</label>
-                                    <div class="input-group">
-                                        <input type="range" id="radius-tl" min="0" max="100" value="8">
-                                        <span class="value-display">8px</span>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="radius-tr">Top-Right</label>
-                                    <div class="input-group">
-                                        <input type="range" id="radius-tr" min="0" max="100" value="8">
-                                        <span class="value-display">8px</span>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="radius-br">Bottom-Right</label>
-                                    <div class="input-group">
-                                        <input type="range" id="radius-br" min="0" max="100" value="8">
-                                        <span class="value-display">8px</span>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="radius-bl">Bottom-Left</label>
-                                    <div class="input-group">
-                                        <input type="range" id="radius-bl" min="0" max="100" value="8">
-                                        <span class="value-display">8px</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="preview">
-                                <div class="preview-box" id="radius-preview"></div>
-                            </div>
-                            <div class="output">
-                                <label for="radius-code">CSS Code</label>
-                                <div class="code-container">
-                                    <textarea id="radius-code" readonly rows="2"></textarea>
-                                    <button class="copy-btn" data-target="radius-code">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gradient Generator -->
-                    <div class="css-generator card">
-                        <div class="generator-header">
-                            <h3><i class="fas fa-palette"></i> Gradient Generator</h3>
-                            <p>Create beautiful gradient backgrounds</p>
-                        </div>
-                        <div class="generator-body">
-                            <div class="controls">
-                                <div class="control-group">
-                                    <label for="gradient-angle">Direction</label>
-                                    <div class="input-group">
-                                        <input type="range" id="gradient-angle" min="0" max="360" value="90">
-                                        <span class="value-display">90deg</span>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="gradient-color1">Start Color</label>
-                                    <input type="color" id="gradient-color1" value="#667eea">
-                                </div>
-                                <div class="control-group">
-                                    <label for="gradient-color2">End Color</label>
-                                    <input type="color" id="gradient-color2" value="#764ba2">
-                                </div>
-                            </div>
-                            <div class="preview">
-                                <div class="preview-box gradient-preview" id="gradient-preview"></div>
-                            </div>
-                            <div class="output">
-                                <label for="gradient-code">CSS Code</label>
-                                <div class="code-container">
-                                    <textarea id="gradient-code" readonly rows="2"></textarea>
-                                    <button class="copy-btn" data-target="gradient-code">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Text Shadow Generator -->
-                    <div class="css-generator card">
-                        <div class="generator-header">
-                            <h3><i class="fas fa-font"></i> Text Shadow Generator</h3>
-                            <p>Create eye-catching text shadow effects</p>
-                        </div>
-                        <div class="generator-body">
-                            <div class="controls">
-                                <div class="control-group">
-                                    <label for="text-shadow-x">Horizontal Offset</label>
-                                    <div class="input-group">
-                                        <input type="range" id="text-shadow-x" min="-20" max="20" value="2">
-                                        <span class="value-display">2px</span>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="text-shadow-y">Vertical Offset</label>
-                                    <div class="input-group">
-                                        <input type="range" id="text-shadow-y" min="-20" max="20" value="2">
-                                        <span class="value-display">2px</span>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="text-shadow-blur">Blur Radius</label>
-                                    <div class="input-group">
-                                        <input type="range" id="text-shadow-blur" min="0" max="20" value="4">
-                                        <span class="value-display">4px</span>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label for="text-shadow-color">Shadow Color</label>
-                                    <input type="color" id="text-shadow-color" value="#000000">
-                                </div>
-                                <div class="control-group">
-                                    <label for="text-color">Text Color</label>
-                                    <input type="color" id="text-color" value="#333333">
-                                </div>
-                            </div>
-                            <div class="preview">
-                                <div class="preview-box text-preview" id="text-shadow-preview">
-                                    <span>Text Shadow</span>
-                                </div>
-                            </div>
-                            <div class="output">
-                                <label for="text-shadow-code">CSS Code</label>
-                                <div class="code-container">
-                                    <textarea id="text-shadow-code" readonly rows="3"></textarea>
-                                    <button class="copy-btn" data-target="text-shadow-code">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -824,16 +501,16 @@ Tryning my best to do more                            </p>
                 <div class="resume-container card">
                     <div class="resume-controls">
                         <button class="btn btn--sm" id="zoom-in">
-                            <i class="fas fa-search-plus"></i> Zoom In
+                            <i class="fas fa-search-plus" aria-hidden="true"></i> Zoom In
                         </button>
                         <button class="btn btn--sm" id="zoom-out">
-                            <i class="fas fa-search-minus"></i> Zoom Out
+                            <i class="fas fa-search-minus" aria-hidden="true"></i> Zoom Out
                         </button>
                         <button class="btn btn--sm" id="reset-zoom">
-                            <i class="fas fa-undo"></i> Reset
+                            <i class="fas fa-undo" aria-hidden="true"></i> Reset
                         </button>
                         <a href="https://i.postimg.cc/zDChL2KR/portfolioresume-1.png" target="_blank" class="btn btn--sm btn--primary">
-                            <i class="fas fa-external-link-alt"></i> Full Size
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Full Size
                         </a>
                         <a href="https://i.postimg.cc/zDChL2KR/portfolioresume-1.png" download="Joel_Inian_Francis_Resume.png" class="btn btn--sm btn--outline">
                             <i class="fas fa-download"></i> Download
@@ -850,7 +527,7 @@ Tryning my best to do more                            </p>
             <section id="contact" class="section">
                 <div class="section-header">
                     <h2 class="section-title">Get in Touch</h2>
-                    <p class="section-subtitle">just get in touch</p>
+                    <p class="section-subtitle">I'm open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
                 </div>
                 <div class="contact-content">
                     <div class="contact-form-container card">
@@ -877,7 +554,7 @@ Tryning my best to do more                            </p>
                                 <span class="error-message"></span>
                             </div>
                             <button type="submit" class="btn btn--primary btn--full-width">
-                                <i class="fas fa-paper-plane"></i> Send Message
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
                             </button>
                         </form>
                     </div>
@@ -886,7 +563,7 @@ Tryning my best to do more                            </p>
                         <div class="contact-cards">
                             <div class="contact-card card" data-copy="francisjoelinian@gmail.com">
                                 <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
                                 </div>
                                 <h4>Email</h4>
                                 <p>francisjoelinian@gmail.com</p>
@@ -896,7 +573,7 @@ Tryning my best to do more                            </p>
                             </div>
                             <div class="contact-card card" data-copy="+91 99408 02121">
                                 <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
                                 </div>
                                 <h4>Phone</h4>
                                 <p>+91 99408 02121</p>
@@ -906,7 +583,7 @@ Tryning my best to do more                            </p>
                             </div>
                             <a href="https://www.linkedin.com/in/joelinianfrancis/" target="_blank" class="contact-card card">
                                 <div class="contact-icon">
-                                    <i class="fab fa-linkedin"></i>
+                                    <i class="fab fa-linkedin" aria-hidden="true"></i>
                                 </div>
                                 <h4>LinkedIn</h4>
                                 <p>Connect with me</p>
@@ -916,7 +593,7 @@ Tryning my best to do more                            </p>
                             </a>
                             <a href="https://github.com/JojoAArtI" target="_blank" class="contact-card card">
                                 <div class="contact-icon">
-                                    <i class="fab fa-github"></i>
+                                    <i class="fab fa-github" aria-hidden="true"></i>
                                 </div>
                                 <h4>GitHub</h4>
                                 <p>View my code</p>
@@ -952,11 +629,6 @@ Tryning my best to do more                            </p>
     <div class="mobile-overlay" id="mobile-overlay"></div>
 
     <script src="script.js"></script>
+    <script src="https://www.goat1000.com/tagcanvas.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
