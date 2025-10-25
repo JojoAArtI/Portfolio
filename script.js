@@ -503,7 +503,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- MODULE: Projects ---
         projects: {
             init() {
-                // Placeholder for future project filtering or interactions
+                this.colorizeTechTags();
+            },
+            colorizeTechTags() {
+                const projectCards = document.querySelectorAll('.project-card');
+                const colorClasses = [
+                    'var(--color-bg-1)', 'var(--color-bg-2)', 'var(--color-bg-3)', 
+                    'var(--color-bg-4)', 'var(--color-bg-5)', 'var(--color-bg-6)', 
+                    'var(--color-bg-7)', 'var(--color-bg-8)'
+                ];
+
+                projectCards.forEach(card => {
+                    const tags = card.querySelectorAll('.tech-tag');
+                    tags.forEach((tag, index) => {
+                        tag.style.backgroundColor = colorClasses[index % colorClasses.length];
+                    });
+                });
             }
         },
 
