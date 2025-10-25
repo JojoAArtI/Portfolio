@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
             init() {
                 this.element = document.getElementById('typing-text');
                 if (!this.element) return;
-                this.words = ["AI/ML Engineer", "Web Developer", "Data Analyst", "Problem Solver"];
+                this.words = ["AI/ML Engineer ig", "Web Developer ", "Data Analyst", "Web Designer",];
                 this.wordIndex = 0;
                 this.charIndex = 0;
                 this.isDeleting = false;
@@ -657,3 +657,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Run the App ---
     portfolioApp.init();
 }); // DOMContentLoaded end
+
