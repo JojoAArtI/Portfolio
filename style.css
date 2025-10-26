@@ -1,6 +1,6 @@
 :root {
   /* Primitive Color Tokens */
-  --color-white: rgba(255, 255, 255, 1);
+  --color-white: rgba(255, 255, 255, 1); 
   --color-black: rgba(0, 0, 0, 1);
 
   /* New Indigo/Purple Theme Primitives */
@@ -2170,3 +2170,4 @@ a:focus-visible {
         opacity: 1;
     }
 }
+
