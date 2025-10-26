@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    'use strict';
+    'use strict'; 
 
     const portfolioApp = {
         // --- General Elements & State ---
@@ -657,4 +657,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Run the App ---
     portfolioApp.init();
 }); // DOMContentLoaded end
+
 
