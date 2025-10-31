@@ -2,7 +2,7 @@
   /* Primitive Color Tokens */
   --color-white: rgba(255, 255, 255, 1); 
   --color-black: rgba(0, 0, 0, 1);
-
+ 
   /* New Indigo/Purple Theme Primitives */
   --color-indigo-300: rgba(156, 136, 255, 1); /* #9C88FF - Lighter for dark mode primary hover/gradient */
   --color-indigo-400: rgba(102, 92, 224, 1); /* #665CE0 - Dark mode primary, light mode gradient start */
@@ -2170,4 +2170,5 @@ a:focus-visible {
         opacity: 1;
     }
 }
+
 
