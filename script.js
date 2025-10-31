@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'use strict'; 
 
     const portfolioApp = {
-        // --- General Elements & State ---
+        // --- General Elements & State --- 
         elements: {
             header: document.getElementById('header'),
             sections: document.querySelectorAll('.section'),
@@ -657,5 +657,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Run the App ---
     portfolioApp.init();
 }); // DOMContentLoaded end
+
 
 
