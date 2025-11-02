@@ -1,15 +1,13 @@
 :root {
-  /* Primitive Color Tokens */
   --color-white: rgba(255, 255, 255, 1); 
   --color-black: rgba(0, 0, 0, 1);
  
-  /* New Indigo/Purple Theme Primitives */
   --color-indigo-300: rgba(156, 136, 255, 1); /* #9C88FF - Lighter for dark mode primary hover/gradient */
   --color-indigo-400: rgba(102, 92, 224, 1); /* #665CE0 - Dark mode primary, light mode gradient start */
   --color-indigo-500: rgba(88, 75, 207, 1); /* #584BCF - Light mode primary, light mode gradient end */
   --color-indigo-600: rgba(70, 59, 168, 1); /* #463BA8 - Light mode primary hover/active */
 
-  /* Cool Grays for Light Mode */
+  /* Cool Grays for Light Mode */ 
   --color-light-gray-50: rgba(245, 247, 250, 1); /* #F5F7FA - Background */
   --color-light-gray-100: rgba(255, 255, 255, 1); /* #FFFFFF - Surface */
   --color-light-gray-200: rgba(226, 232, 240, 1); /* #E2E8F0 - Border */
@@ -2170,5 +2168,6 @@ a:focus-visible {
         opacity: 1;
     }
 }
+
 
 
