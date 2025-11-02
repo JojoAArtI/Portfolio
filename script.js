@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     'use strict'; 
 
     const portfolioApp = {
-        // --- General Elements & State --- 
         elements: {
             header: document.getElementById('header'),
             sections: document.querySelectorAll('.section'),
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         isManualNavigating: false, // New state to prevent observer interference during manual navigation
 
-        // --- Initialization ---
         init() {
             // Defensive: ensure basic elements query succeeded
             this.elements.sections = this.elements.sections || document.querySelectorAll('.section');
@@ -657,6 +655,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Run the App ---
     portfolioApp.init();
 }); // DOMContentLoaded end
+
 
 
 
