@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             backToTopButton: document.getElementById('back-to-top'),
             scrollProgress: document.querySelector('#back-to-top .scroll-progress'),
         },
-        isManualNavigating: false, // New state to prevent observer interference during manual navigation
+        isManualNavigating: false, 
 
         init() {
             // Defensive: ensure basic elements query succeeded
@@ -655,6 +655,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Run the App ---
     portfolioApp.init();
 }); // DOMContentLoaded end
+
 
 
 
